@@ -24,7 +24,7 @@ processed_global_temps <- raw_global_temps |>
                names_to = "months",
                values_to = "temperature") |>
   rename_with(~ tolower(.x)) |>
-  filter(!(is.na(temperature))) |>
+  filter(!(is.na(temperature))) |> # Latest data is from May 2023
   summarize(mean_temperature = mean(temperature),
             .by = year)
 
