@@ -64,7 +64,7 @@ processed_global_temps |>
                                   hjust = 0.5,
                                   margin = margin(t = 35)),
         plot.margin = grid::unit(c(-7.9, 5, 0, 5), "mm")) +
-  scale_fill_gradientn(colours = rev(brewer.pal(11, "RdBu"))) + # This color palette I got from https://cortinah.github.io/hockeystick/reference/warming_stripes.html
+  scale_fill_gradientn(colours = rev(brewer.pal(11, "RdBu"))) + # I got this color palette from https://cortinah.github.io/hockeystick/reference/warming_stripes.html
 
 
 ggsave("2023-07_remaking_warming_stripes_viz.png",
