@@ -16,7 +16,7 @@ library(RColorBrewer)
 # 
 # raw_global_temps <- tuesdata$global_temps
 
-raw_global_temps <- read_csv("2023-07-11_remaking_warming_stripes_data.csv")
+raw_global_temps <- read_csv("2023-07_remaking_warming_stripes_data.csv")
 
 # Transform data ---------------------------------------------------------------
 
