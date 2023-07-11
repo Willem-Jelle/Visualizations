@@ -37,17 +37,13 @@ showtext_auto()
 color_palette_plot_title <- c("1880" = "#4896C4",
                               "2023" = "#710221")
 
-# Make breaks
-
-breaks <- c(seq(1880, 2023, 30), 2023)
-
 # Visualize data and save ------------------------------------------------------
 
 processed_global_temps |>
   ggplot(aes(x = as.factor(year),
              y = 1,
              fill = mean_temperature,
-             width = 1.1)) +
+             width = 1.05)) +
   geom_col() +
   xlab("") +
   ylab("") +
@@ -64,7 +60,7 @@ processed_global_temps |>
                  " 2023",
                  "</span>")) +
   theme_minimal(base_size = 50,
-             base_family = "Open Sans") +
+                base_family = "Open Sans") +
   theme(legend.position = "none",
         panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
