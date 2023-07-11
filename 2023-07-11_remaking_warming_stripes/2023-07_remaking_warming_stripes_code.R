@@ -12,10 +12,6 @@ library(RColorBrewer)
 
 # Import Tidy Tuesday data week 28 2023 ----------------------------------------
 
-# tuesdata <- tidytuesdayR::tt_load('2023-07-11') # Import 
-# 
-# raw_global_temps <- tuesdata$global_temps
-
 raw_global_temps <- read_csv("2023-07_remaking_warming_stripes_data.csv")
 
 # Transform data ---------------------------------------------------------------
