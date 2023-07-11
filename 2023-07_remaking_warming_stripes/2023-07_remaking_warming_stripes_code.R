@@ -37,6 +37,10 @@ showtext_auto()
 color_palette_plot_title <- c("1880" = "#4896C4",
                               "2023" = "#710221")
 
+# Make breaks
+
+breaks <- c(seq(1880, 2023, 30), 2023)
+
 # Visualize data and save ------------------------------------------------------
 
 processed_global_temps |>
@@ -45,6 +49,8 @@ processed_global_temps |>
              fill = mean_temperature,
              width = 1.1)) +
   geom_col() +
+  xlab("") +
+  ylab("") +
   ggtitle(paste0("Verandering jaarlijkse temperatuur wereldwijd van",
                  "<span style = 'color:",
                  color_palette_plot_title["1880"],
@@ -57,18 +63,26 @@ processed_global_temps |>
                  ";'>",
                  " 2023",
                  "</span>")) +
-  theme_void(base_size = 50,
+  theme_minimal(base_size = 50,
              base_family = "Open Sans") +
   theme(legend.position = "none",
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(),
+        axis.text.y = element_blank(),
+        axis.text.x = element_text(vjust = 6.5,
+                                   color = "#000000",
+                                   face = "bold",
+                                   size = 55),
         plot.title = element_markdown(face = "bold",
                                   hjust = 0.5,
                                   margin = margin(t = 35)),
-        plot.margin = grid::unit(c(-7.9, 5, 0, 5), "mm")) +
+        plot.margin = grid::unit(c(-7.9, 8, -15, -5), "mm")) +
   scale_fill_gradientn(colours = rev(brewer.pal(11, "RdBu"))) + # Color palette source: https://cortinah.github.io/hockeystick/reference/warming_stripes.html
+  scale_x_discrete(breaks = c(seq(1880, 2023, 30), 2023))
 
+?scale_x_discrete
 
 ggsave("2023-07_remaking_warming_stripes_viz.png",
        width = 11,
        height = 5,
        bg = "#FFFFFF")
-
