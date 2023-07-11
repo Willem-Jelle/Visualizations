@@ -71,7 +71,7 @@ processed_global_temps |>
   scale_fill_gradientn(colours = rev(brewer.pal(11, "RdBu"))) + # This color palette I got from https://cortinah.github.io/hockeystick/reference/warming_stripes.html
 
 
-ggsave("2023-07-11_remaking_warming_stripes_viz.png",
+ggsave("2023-07_remaking_warming_stripes_viz.png",
        width = 11,
        height = 5,
        bg = "#FFFFFF")
