@@ -97,8 +97,6 @@ processed_global_temps |>
   scale_fill_gradientn(colours = rev(cp_plot)) +
   scale_x_discrete(breaks = c(seq(1880, 2023, 30), 2023))
 
-#
-
 ggsave("2023-07_remaking_warming_stripes_viz.png",
        width = 11,
        height = 5,
