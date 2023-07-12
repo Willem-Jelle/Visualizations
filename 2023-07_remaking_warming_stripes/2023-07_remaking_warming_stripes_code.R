@@ -4,15 +4,19 @@
 
 library(readr)
 library(dplyr)
+library(stringr)
 library(tidyr)
 library(showtext)
 library(ggplot2)
 library(ggtext)
 library(RColorBrewer)
 
-# Import Tidy Tuesday data week 28 2023 ----------------------------------------
+# Import Tidy Tuesday data week 28 2023 and 'live' data ------------------------
 
-raw_global_temps <- read_csv("2023-07_remaking_warming_stripes_data.csv") # Data source: https://github.com/rfordatascience/tidytuesday/tree/master/data/2023/2023-07-11
+# raw_global_temps <- read_csv("2023-07_remaking_warming_stripes_data.csv") # Data source: https://github.com/rfordatascience/tidytuesday/tree/master/data/2023/2023-07-11
+
+raw_global_temps <- read_csv("https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv", skip = 1) |> # URL is direct 'live' data source, derived from Tidy Tuesday GitHub
+  mutate(across(Jan:SON, as.numeric))
 
 # Transform data ---------------------------------------------------------------
 
@@ -40,22 +44,21 @@ cp_plot_title <- c("1880" = "#4292c6",
                    "2023" = "#67000d")
 
 cp_plot <- c("#67000d", # Warmest
-                        "#a50f15",
-                        "#cb181d",
-                        "#ef3b2c",
-                        "#fb6a4a",
-                        "#fc9272",
-                        "#fcbba1",
-                        "#fee0d2", # Color palette source: https://en.wikipedia.org/wiki/Warming_stripes
-                        "#c6dbef",
-                        "#9ecae1",
-                        "#6baed6",
-                        "#4292c6",
-                        "#2171b5",
-                        "#08519c",
-                        "#08306b") # Coolest
-                      
-
+             "#a50f15",
+             "#cb181d",
+             "#ef3b2c",
+             "#fb6a4a",
+             "#fc9272",
+             "#fcbba1",
+             "#fee0d2", # Color palette source: https://en.wikipedia.org/wiki/Warming_stripes
+             "#c6dbef",
+             "#9ecae1",
+             "#6baed6",
+             "#4292c6",
+             "#2171b5",
+             "#08519c",
+             "#08306b") # Coolest
+             
 # Visualize data and save ------------------------------------------------------
 
 processed_global_temps |>
@@ -95,7 +98,7 @@ processed_global_temps |>
   scale_fill_gradientn(colours = rev(cp_plot)) +
   scale_x_discrete(breaks = c(seq(1880, 2023, 30), 2023))
 
-ggsave("2023-07_test_remaking_warming_stripes_viz.png",
+ggsave("2023-07_remaking_warming_stripes_viz.png",
        width = 11,
        height = 5,
        bg = "#FFFFFF")
