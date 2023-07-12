@@ -9,7 +9,6 @@ library(tidyr)
 library(showtext)
 library(ggplot2)
 library(ggtext)
-library(RColorBrewer)
 
 # Import Tidy Tuesday data week 28 2023 ----------------------------------------
 
@@ -59,7 +58,7 @@ cp_plot <- c("#67000d", # Warmest
              "#08519c",
              "#08306b") # Coolest
              
-# Visualize data and save ------------------------------------------------------
+# Visualize data and save visualization ----------------------------------------
 
 processed_global_temps |>
   ggplot(aes(x = year,
