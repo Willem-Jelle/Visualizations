@@ -11,12 +11,15 @@ library(ggplot2)
 library(ggtext)
 library(RColorBrewer)
 
-# Import Tidy Tuesday data week 28 2023 and 'live' data ------------------------
+# Import Tidy Tuesday data week 28 2023 ----------------------------------------
 
 # raw_global_temps <- read_csv("2023-07_remaking_warming_stripes_data.csv") # Data source: https://github.com/rfordatascience/tidytuesday/tree/master/data/2023/2023-07-11
 
-raw_global_temps <- read_csv("https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv", skip = 1) |> # URL is direct 'live' data source, derived from Tidy Tuesday GitHub
-  mutate(across(Jan:SON, as.numeric))
+# Import 'live' data, source URL is derived from Tidy Tuesday GitHub
+
+raw_global_temps <- read_csv("https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv", skip = 1) |>
+  mutate(across(-Year, as.numeric),
+         Year = as.factor(Year))
 
 # Transform data ---------------------------------------------------------------
 
@@ -24,13 +27,10 @@ processed_global_temps <- raw_global_temps |>
   select(Year,
          Jan, Feb, Mar, Apr, May, Jun,
          Jul, Aug, Sep, Oct, Nov, Dec) |>
-  pivot_longer(-Year,
-               names_to = "months",
-               values_to = "temperature") |>
+  pivot_longer(-Year, names_to = "months", values_to = "temperature") |>
   rename_with(~ tolower(.x)) |>
   filter(!(is.na(temperature))) |> # Latest data is from May 2023
-  summarize(mean_temperature = mean(temperature),
-            .by = year)
+  summarize(mean_temperature = mean(temperature), .by = year)
 
 # Add Google font --------------------------------------------------------------
 
@@ -62,7 +62,7 @@ cp_plot <- c("#67000d", # Warmest
 # Visualize data and save ------------------------------------------------------
 
 processed_global_temps |>
-  ggplot(aes(x = as.factor(year),
+  ggplot(aes(x = year,
              y = 1,
              fill = mean_temperature,
              width = 1.05)) +
@@ -92,8 +92,8 @@ processed_global_temps |>
                                    face = "bold",
                                    size = 55),
         plot.title = element_markdown(face = "bold",
-                                  hjust = 0.5,
-                                  margin = margin(t = 37)),
+                                      hjust = 0.5,
+                                      margin = margin(t = 37)),
         plot.margin = grid::unit(c(-7.9, 8.5, -15, -5), "mm")) +
   scale_fill_gradientn(colours = rev(cp_plot)) +
   scale_x_discrete(breaks = c(seq(1880, 2023, 30), 2023))
