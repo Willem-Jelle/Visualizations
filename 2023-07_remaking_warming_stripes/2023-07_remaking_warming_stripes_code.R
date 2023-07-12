@@ -28,14 +28,33 @@ processed_global_temps <- raw_global_temps |>
   summarize(mean_temperature = mean(temperature),
             .by = year)
 
-# Add Google font and colors for title plot ------------------------------------
+# Add Google font --------------------------------------------------------------
 
 font_add_google("Open Sans")
 
 showtext_auto()
 
-color_palette_plot_title <- c("1880" = "#4896C4",
-                              "2023" = "#710221")
+# Make color palettes ----------------------------------------------------------
+
+cp_plot_title <- c("1880" = "#4292c6",
+                   "2023" = "#67000d")
+
+cp_plot <- c("#67000d", # Warmest
+                        "#a50f15",
+                        "#cb181d",
+                        "#ef3b2c",
+                        "#fb6a4a",
+                        "#fc9272",
+                        "#fcbba1",
+                        "#fee0d2", # Color palette source: https://en.wikipedia.org/wiki/Warming_stripes
+                        "#c6dbef",
+                        "#9ecae1",
+                        "#6baed6",
+                        "#4292c6",
+                        "#2171b5",
+                        "#08519c",
+                        "#08306b") # Coolest
+                      
 
 # Visualize data and save ------------------------------------------------------
 
@@ -49,13 +68,13 @@ processed_global_temps |>
   ylab("") +
   ggtitle(paste0("Verandering jaarlijkse temperatuur wereldwijd van",
                  "<span style = 'color:",
-                 color_palette_plot_title["1880"],
+                 cp_plot_title["1880"],
                  ";'>",
                  " 1880 ",
                  "</span>",
                  "tot",
                  "<span style = 'color:",
-                 color_palette_plot_title["2023"],
+                 cp_plot_title["2023"],
                  ";'>",
                  " 2023",
                  "</span>")) +
@@ -71,14 +90,12 @@ processed_global_temps |>
                                    size = 55),
         plot.title = element_markdown(face = "bold",
                                   hjust = 0.5,
-                                  margin = margin(t = 35)),
-        plot.margin = grid::unit(c(-7.9, 8, -15, -5), "mm")) +
-  scale_fill_gradientn(colours = rev(brewer.pal(11, "RdBu"))) + # Color palette source: https://cortinah.github.io/hockeystick/reference/warming_stripes.html
+                                  margin = margin(t = 37)),
+        plot.margin = grid::unit(c(-7.9, 8.5, -15, -5), "mm")) +
+  scale_fill_gradientn(colours = rev(cp_plot)) +
   scale_x_discrete(breaks = c(seq(1880, 2023, 30), 2023))
 
-?scale_x_discrete
-
-ggsave("2023-07_remaking_warming_stripes_viz.png",
+ggsave("2023-07_test_remaking_warming_stripes_viz.png",
        width = 11,
        height = 5,
        bg = "#FFFFFF")
