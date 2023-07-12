@@ -15,7 +15,7 @@ library(RColorBrewer)
 
 # raw_global_temps <- read_csv("2023-07_remaking_warming_stripes_data.csv") # Data source: https://github.com/rfordatascience/tidytuesday/tree/master/data/2023/2023-07-11
 
-# Import 'live' data, source URL is derived from Tidy Tuesday GitHub
+# Import 'live' data, source URL is derived from Tidy Tuesday GitHub -----------
 
 raw_global_temps <- read_csv("https://data.giss.nasa.gov/gistemp/tabledata_v4/GLB.Ts+dSST.csv", skip = 1) |>
   mutate(across(-Year, as.numeric),
