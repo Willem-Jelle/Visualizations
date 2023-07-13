@@ -39,24 +39,21 @@ showtext_auto()
 
 # Make color palettes ----------------------------------------------------------
 
-cp_plot_title <- c("1880" = "#4292c6",
-                   "2023" = "#67000d")
-
-cp_plot <- c("#67000d", # Warmest
-             "#a50f15",
-             "#cb181d",
-             "#ef3b2c",
-             "#fb6a4a",
-             "#fc9272",
-             "#fcbba1",
-             "#fee0d2", # Color palette source: https://en.wikipedia.org/wiki/Warming_stripes
-             "#c6dbef",
-             "#9ecae1",
-             "#6baed6",
-             "#4292c6",
-             "#2171b5",
-             "#08519c",
-             "#08306b") # Coolest
+color_palette <- c("2023" = "#67000d", # Warmest
+                            "#a50f15",
+                            "#cb181d",
+                            "#ef3b2c",
+                            "#fb6a4a",
+                            "#fc9272",
+                            "#fcbba1",
+                            "#fee0d2", # Color palette source: https://en.wikipedia.org/wiki/Warming_stripes
+                            "#c6dbef",
+                            "#9ecae1",
+                            "#6baed6",
+                   "1880" = "#4292c6",
+                            "#2171b5",
+                            "#08519c",
+                            "#08306b") # Coolest
              
 # Visualize data and save visualization ----------------------------------------
 
@@ -70,13 +67,13 @@ processed_global_temps |>
   ylab("") +
   ggtitle(paste0("Verandering jaarlijkse temperatuur wereldwijd van",
                  "<span style = 'color:",
-                 cp_plot_title["1880"],
+                 color_palette["1880"],
                  ";'>",
                  " 1880 ",
                  "</span>",
                  "tot",
                  "<span style = 'color:",
-                 cp_plot_title["2023"],
+                 color_palette["2023"],
                  ";'>",
                  " 2023",
                  "</span>")) +
@@ -94,7 +91,7 @@ processed_global_temps |>
                                       hjust = 0.5,
                                       margin = margin(t = 37)),
         plot.margin = grid::unit(c(-7.9, 8.5, -15, -5), "mm")) +
-  scale_fill_gradientn(colours = rev(cp_plot)) +
+  scale_fill_gradientn(colours = rev(color_palette)) +
   scale_x_discrete(breaks = c(seq(1880, 2023, 30), 2023))
 
 ggsave("2023-07_remaking_warming_stripes_viz.png",
