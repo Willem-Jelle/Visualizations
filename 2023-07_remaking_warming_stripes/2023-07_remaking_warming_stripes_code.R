@@ -29,8 +29,7 @@ processed_global_temps <- raw_global_temps |>
          Jul, Aug, Sep, Oct, Nov, Dec) |>
   pivot_longer(-Year, names_to = "months", values_to = "temperature") |>
   rename_with(~ tolower(.x)) |>
-  filter(!(is.na(temperature))) |> # Latest data is from May 2023
-  summarize(mean_temperature = mean(temperature), .by = year)
+  summarize(mean_temperature = mean(temperature, na.rm = TRUE), .by = year)
 
 # Add Google font --------------------------------------------------------------
 
@@ -65,7 +64,7 @@ processed_global_temps |>
   ggplot(aes(x = year,
              y = 1,
              fill = mean_temperature,
-             width = 1.05)) +
+             width = 1.03)) +
   geom_col() +
   xlab("") +
   ylab("") +
