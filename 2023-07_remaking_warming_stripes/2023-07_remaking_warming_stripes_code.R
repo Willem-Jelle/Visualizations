@@ -37,7 +37,7 @@ font_add_google("Open Sans")
 
 showtext_auto()
 
-# Make color palettes ----------------------------------------------------------
+# Make color palette -----------------------------------------------------------
 
 color_palette <- c("2023" = "#67000d", # Warmest
                             "#a50f15",
