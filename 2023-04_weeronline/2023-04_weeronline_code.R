@@ -39,11 +39,11 @@ showtext_auto()
 # Create values for plot -------------------------------------------------------
 
 color_palette <- c("derde_partij" =  "#0382EB",
-                   "empty" = "#FFFFFF")
+                   "empty" = "#F9F9F9")
 
 light_blue <- "#0382EB"
 
-dark_blue <- "#004C7F"
+dark_blue <- "#013661"
 
 plot_title <- paste0("<span style = 'color:",
                      dark_blue,
@@ -114,4 +114,4 @@ weeronline |>
 ggsave("2023-04_weeronline_viz.png",
        width = 9,
        height = 9,
-       bg = "#FFFFFF")
+       bg = "#F9F9F9")
