@@ -13,7 +13,7 @@ library(ggtext)
 # Import Tidy Tuesday data week 28 2023 ----------------------------------------
 
 raw_global_temps <- read_csv("2023-07_remaking_warming_stripes_data.csv") |> # Data source: https://github.com/rfordatascience/tidytuesday/tree/master/data/2023/2023-07-11
-  mutate(Year = as.factor(Year))
+  mutate(Year = as.factor(Year))                                             # Direct URL: https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-07-11/global_temps.csv
   
 # Import 'live' data, source URL is derived from Tidy Tuesday GitHub -----------
 
@@ -65,18 +65,18 @@ processed_global_temps |>
   geom_col() +
   xlab("") +
   ylab("") +
-  ggtitle(paste0("Verandering jaarlijkse temperatuur wereldwijd van",
-                 "<span style = 'color:",
-                 color_palette["1880"],
-                 ";'>",
-                 " 1880 ",
-                 "</span>",
-                 "tot",
-                 "<span style = 'color:",
-                 color_palette["2023"],
-                 ";'>",
-                 " 2023",
-                 "</span>")) +
+  labs(title = paste0("Verandering jaarlijkse temperatuur wereldwijd van",
+                      "<span style = 'color:",
+                      color_palette["1880"],
+                      ";'>",
+                      " 1880 ",
+                      "</span>",
+                      "tot",
+                      "<span style = 'color:",
+                      color_palette["2023"],
+                      ";'>",
+                      " 2023",
+                      "</span>")) +
   theme_minimal(base_size = 50,
                 base_family = "Open Sans") +
   theme(legend.position = "none",
@@ -84,10 +84,11 @@ processed_global_temps |>
         panel.grid.minor = element_blank(),
         axis.text.y = element_blank(),
         axis.text.x = element_text(vjust = 6.5,
-                                   color = "#000000",
+                                   color = "#303030",
                                    face = "bold",
                                    size = 55),
         plot.title = element_markdown(face = "bold",
+                                      color = "#303030",
                                       hjust = 0.5,
                                       margin = margin(t = 37)),
         plot.margin = grid::unit(c(-7.9, 8.5, -15, -5), "mm")) +
@@ -97,4 +98,4 @@ processed_global_temps |>
 ggsave("2023-07_remaking_warming_stripes_viz.png",
        width = 11,
        height = 5,
-       bg = "#FFFFFF")
+       bg = "#F9F9F9")
