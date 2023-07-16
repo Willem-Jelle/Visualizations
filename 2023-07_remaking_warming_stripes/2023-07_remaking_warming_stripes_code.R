@@ -84,11 +84,11 @@ processed_global_temps |>
         panel.grid.minor = element_blank(),
         axis.text.y = element_blank(),
         axis.text.x = element_text(vjust = 6.5,
-                                   color = "#303030",
+                                   color = "#252525",
                                    face = "bold",
                                    size = 55),
         plot.title = element_markdown(face = "bold",
-                                      color = "#303030",
+                                      color = "#252525",
                                       hjust = 0.5,
                                       margin = margin(t = 37)),
         plot.margin = grid::unit(c(-7.9, 8.5, -15, -5), "mm")) +
