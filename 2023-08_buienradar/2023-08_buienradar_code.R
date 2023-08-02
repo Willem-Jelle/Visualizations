@@ -37,7 +37,7 @@ font_add("fa-pro-5-solid",
          paste0(font_path, "Font Awesome 5 Pro-Solid-900.otf"))
 
 font_add("Montserrat-Bold",
-         paste0(font_path, "Fonts/Montserrat-Bold.ttf"))
+         paste0(font_path, "Montserrat-Bold.ttf"))
 
 showtext_auto()
 
