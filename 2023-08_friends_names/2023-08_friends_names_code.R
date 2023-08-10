@@ -114,3 +114,5 @@ ggsave("2023-08_friends_viz.png",
        units = "px",
        dpi = 300,
        bg = "#F9F9F9")
+
+sum(friends_names$n)
