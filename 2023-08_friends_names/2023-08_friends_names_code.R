@@ -48,7 +48,7 @@ showtext_auto()
 
 # Add PNG image ----------------------------------------------------------------
 
-friends_logo <- readPNG("2023-08_friends_logo.png", native = TRUE)
+friends_logo <- readPNG("2023-08_friends_names_logo.png", native = TRUE)
 
 friends_grob <- rasterGrob(friends_logo, interpolate = TRUE)
 
@@ -108,11 +108,9 @@ friends_names |>
   coord_cartesian(ylim = c(0.8, 1.5), 
                   clip = 'off') # Add this function + arguments to go outside the plot
 
-ggsave("2023-08_friends_viz.png",
+ggsave("2023-08_friends_names_viz.png",
        width = 2500,
        height = 1500,
        units = "px",
        dpi = 300,
        bg = "#F9F9F9")
-
-sum(friends_names$n)
