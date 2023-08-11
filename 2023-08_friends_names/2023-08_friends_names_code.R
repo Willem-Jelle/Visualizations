@@ -106,7 +106,7 @@ friends_names |>
                     xmin = 1.55, xmax = 5.45, # Change width/position of image with xmin and xmax
                     ymin = 1, ymax = 1.95) + # Change height/position of image with ymin and ymax
   coord_cartesian(ylim = c(0.8, 1.5), 
-                  clip = 'off') # Add this function + arguments to go outside the plot
+                  clip = "off") # Add this function + arguments to go outside the plot
 
 ggsave("2023-08_friends_names_viz.png",
        width = 2500,
