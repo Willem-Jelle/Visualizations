@@ -30,9 +30,12 @@ color_palette <- c("pacman" = "#FFFF01",
 # Visualize data and save visualization ----------------------------------------
 
 pacman |>
-ggplot(aes(x = "", y = value, fill = is)) +
+ggplot(aes(x = "",
+           y = value,
+           fill = is)) +
   geom_bar(stat = "identity") +
-  coord_polar("y", start = 99.65) +
+  coord_polar("y",
+              start = 99.65) +
   theme_void() +
   scale_fill_manual(values = color_palette) +
   theme(legend.position = "none",
