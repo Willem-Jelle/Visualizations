@@ -1,6 +1,6 @@
 # Info -------------------------------------------------------------------------
 
-# Source of pie chart Pacman idea not known. Someone on the internet? ¯\_(ツ)_/¯
+# Source of pie chart Pac-Man idea not known. Someone on the internet? ¯\_(ツ)_/¯
 
 # Load packages ----------------------------------------------------------------
 
