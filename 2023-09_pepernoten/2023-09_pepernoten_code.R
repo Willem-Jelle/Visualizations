@@ -9,7 +9,7 @@ library(ggtext)
 pepernoot <- tibble(x = 1,
                     y = 1)
 
-# Make 'pepernoot' icon for legend and save as png -----------------------------
+# Make 'pepernoot' icon for legend and save as image ---------------------------
 
 pepernoot |>
   ggplot(aes(x = x,
