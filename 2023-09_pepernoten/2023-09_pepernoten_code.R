@@ -63,7 +63,7 @@ pepernoot |>
                                     color = "#FFBF00",
                                     family = "Comic Sans MS",
                                     face = "bold",
-                                    hjust = c(0.35, -0.30),
+                                    hjust = c(0.25, -0.19),
                                     vjust = c(0.5, 0.6),
                                     margin = margin(t = 25)),
         plot.margin = margin(t = 1.7,
@@ -73,7 +73,7 @@ pepernoot |>
                              unit = "cm")) +
   labs(title = "Wanneer liggen pepernoten \n jaarlijks in de winkel?",
        caption = c(pepernoot_icon,
-                   "Te vroeg"))
+                   "100% te vroeg"))
 
 ggsave("2023-09_pepernoten_viz.png",
        width = 2500,
