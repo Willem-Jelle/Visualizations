@@ -29,7 +29,7 @@ buienradar <- tibble(x = rep(-1:-25, each = 38)) |>
   mutate(advertentiepartner = replace_na(advertentiepartner, "empty")) |>
   relocate(advertentiepartner, .after = id)
 
-# Add Google font and FontAwesome ----------------------------------------------
+# Add font and FontAwesome -----------------------------------------------------
 
 font_path <- "/Users/Willem-Jelle/Library/Fonts/"
 
