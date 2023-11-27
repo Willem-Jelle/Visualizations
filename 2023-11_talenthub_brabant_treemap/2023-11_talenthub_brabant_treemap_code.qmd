@@ -106,7 +106,7 @@ ggsave("2023-11_talenthub_brabant_treemap_ggsave.png",
        dpi = 300,
        bg = "#A4DBF8")
 
-# Image code wizardry, rotate exported treemap visualization, add arrow --------
+# Image code wizardry, rotate exported treemap visualization -------------------
 
 image_read("2023-11_talenthub_brabant_treemap_ggsave.png") |>
   image_rotate(degrees = 69) |>
