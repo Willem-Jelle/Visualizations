@@ -1,0 +1,128 @@
+---
+title: ""
+format:
+  html:
+    embed-resources: true
+editor: visual
+page-layout: full
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+
+```{=html}
+
+<style>
+
+body {
+  background-color: #A4DBF8;
+}
+
+h1 {
+  <!-- margin: 5px; -->
+  text-align: center;
+  color: #3B3A6E;
+  font-size: 35.5px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  <!-- line-height: 1.5em; -->
+}
+
+</style>
+```
+
+```{r}
+#| label: code for treemap visualization
+#| include: false
+
+library(readr)
+library(dplyr)
+library(stringr)
+library(showtext)
+library(ggplot2)
+library(treemapify)
+library(grid)
+library(magick)
+
+# Import and transform data ----------------------------------------------------
+
+vliegwiel_data <- read_csv("2023-11_talenthub_brabant_treemap_data.csv") |>
+  mutate(label_title = ifelse(verdeling == "totaal_investering_door_provincie",
+                         "Investering provincie",
+                         str_to_title(verdeling)),
+         label_percent = ifelse(percent == 100,
+                                paste0(round(percent), "%"),
+                                paste0("+", round(percent), "%")))
+
+# Add font and size ------------------------------------------------------------
+
+font_add("Montserrat-ExtraBold",
+         paste0("2023-11_talenthub_brabant_fonts/Montserrat-ExtraBold.ttf"))
+
+showtext_auto()
+
+font_size <- 111
+
+# Visualize and save treemap ---------------------------------------------------
+
+vliegwiel_data |>
+  ggplot(aes(area = bedrag,
+             fill = groep,
+             subgroup = groep,
+             subgroup2 = label_title,
+             label = label_percent)) +
+  geom_treemap() +
+  geom_treemap_subgroup_border(colour = "#A4DBF8",
+                               size = 15) +
+  geom_treemap_subgroup2_border(colour = "#A4DBF8",
+                               size = 15) +
+  geom_treemap_text(colour = ifelse(vliegwiel_data$label_title == "Investering provincie",
+                                    "#A4DBF8",
+                                    "#FA4A9C"),
+                    family = "Montserrat-ExtraBold",
+                    size = font_size,
+                    place = "topright",
+                    angle = 90,
+                    padding.x = grid::unit(7, "mm"),
+                    padding.y = grid::unit(7, "mm")) +
+  geom_treemap_subgroup2_text(colour = ifelse(vliegwiel_data$label_percent == "100%",
+                                              "#A4DBF8",
+                                              "#FA4A9C"),
+                              family = "Montserrat-ExtraBold",
+                              size = font_size,
+                              place = "bottomleft",
+                              angle = 90,
+                              padding.x = grid::unit(7, "mm"),
+                              padding.y = grid::unit(7, "mm")) +
+  theme_void() +
+  theme(legend.position = "none") +
+  scale_x_reverse() +
+  scale_fill_manual(values = c("#3B3A6E",
+                                "#3B3A6E"))
+
+ggsave("2023-11_talenthub_brabant_treemap_ggsave.png",
+       width = 3500,
+       height = 3500,
+       units = "px",
+       dpi = 300,
+       bg = "#A4DBF8")
+
+# Image code wizardry, rotate exported treemap visualization, add arrow --------
+
+image_read("2023-11_talenthub_brabant_treemap_ggsave.png") |>
+  image_rotate(degrees = 69) |>
+  image_write("2023-11_talenthub_brabant_treemap_ggsave.png")
+
+```
+
+<center>
+
+<h1>De investering van provincie Noord-Brabant<br>
+leidt tot <font color = "#FA4A9C">+`r vliegwiel_data |> filter(verdeling != "totaal_investering_door_provincie") |> summarize(sum = round(sum(percent))) |> pull(sum)`% extra financiële middelen</font><br></h1>
+
+<h1>
+
+<br>
+
+![](2023-11_talenthub_brabant_treemap_ggsave.png){width="775"}
+
+</center>
