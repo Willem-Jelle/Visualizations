@@ -120,6 +120,7 @@ image_read("2023-11_talenthub_brabant_treemap_ggsave.png") |>
 <br>
 
 ![](2023-11_talenthub_brabant_treemap_ggsave.png){width="775"}
+
 <br>
 
 </center>
