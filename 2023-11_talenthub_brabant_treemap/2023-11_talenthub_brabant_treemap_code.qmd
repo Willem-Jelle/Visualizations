@@ -94,7 +94,9 @@ vliegwiel_data |>
                               padding.x = grid::unit(7, "mm"),
                               padding.y = grid::unit(7, "mm")) +
   theme_void() +
-  theme(legend.position = "none") +
+  theme(legend.position = "none",
+                plot.margin = margin(b = 3,
+                             unit = "cm")) +
   scale_x_reverse() +
   scale_fill_manual(values = c("#3B3A6E",
                                 "#3B3A6E"))
@@ -118,8 +120,6 @@ image_read("2023-11_talenthub_brabant_treemap_ggsave.png") |>
 
 <h1>De investering van provincie Noord-Brabant<br>
 leidt tot <font color = "#FA4A9C">+`r vliegwiel_data |> filter(verdeling != "totaal_investering_door_provincie") |> summarize(sum = round(sum(percent))) |> pull(sum)`% extra financiële middelen</font><br></h1>
-
-<h1>
 
 <br>
 
