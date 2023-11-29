@@ -12,3 +12,7 @@ quarto_render("2023-06_amateurkunst_code.qmd",
 webshot("2023-06_amateurkunst_html.html",
         zoom = 1.5,
         file = "2023-06_amateurkunst_viz.png")
+
+# Remove redundant HTML file ---------------------------------------------------
+
+file.remove("2023-06_amateurkunst_html.html")
