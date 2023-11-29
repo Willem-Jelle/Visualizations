@@ -1,0 +1,164 @@
+---
+title: ""
+format:
+  html:
+    embed-resources: true
+page-layout: full
+---
+
+<link rel="preconnect" href="https://fonts.googleapis.com"> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+```{=html}
+
+<style>
+
+body {
+  background-color: #FFFFFF;
+}
+
+h1 {
+  text-align: center;
+  color: #000000;
+  font-size: 27px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  line-height: 1.5em;
+}
+
+l1 {
+  text-align: left;
+  color: #000000;
+  font-size: 21px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  line-height: 1.5em;
+}
+
+/* Leaflet custom CSS */
+
+.leaflet-container {
+    background-color: #FFFFFF;
+}
+
+.leaflet {
+    margin: auto;
+}
+
+.leaflet-tooltip-top:before,
+.leaflet-tooltip-bottom:before,
+.leaflet-tooltip-left:before,
+.leaflet-tooltip-right:before {
+  border: none !important;
+}
+
+</style>
+
+```
+
+```{r}
+#| label: code for creating map visualization
+#| include: false
+
+library(readr)
+library(janitor)
+library(dplyr)
+library(stringr)
+library(sf)
+library(leaflet)
+library(htmltools)
+library(htmlwidgets)
+
+# Import data amateurkunst Noord-Brabant ---------------------------------------
+
+amateurkunst <- read_csv("2023-06_amateurkunst_data.csv")
+
+# Import and transform shapefile gemeentegrenzen Noord-Brabant -----------------
+
+shapefile <- read_sf("2023-06_amateurkunst_shapefile_noord_brabant/GRS_1_GEM_V.shp") |>
+  clean_names() |>
+  rename(gemeente = gemnaam) |>
+  mutate(gemeente = str_replace_all(gemeente, c("Nuenen Gerwen en Nederwetten" = "Nuenen, Gerwen en Nederwetten"))) |>
+  st_transform(crs = "+proj=longlat +datum=WGS84")
+
+# Join and transform shapefile with data amateurkunst Noord-Brabant ------------
+
+shapefile <- shapefile |>
+  left_join(amateurkunst,
+            by = "gemeente") |>
+  relocate(ondersteuning_amateurkunst,
+           .after = gemeente) |>
+  mutate(ondersteuning_amateurkunst = str_replace_all(ondersteuning_amateurkunst, c("Ja" = "Heeft ondersteuning",
+                                                                                    "Nee" = "Geen ondersteuning",
+                                                                                    "Onbekend" = "Ondersteuning niet bekend")))
+
+# Create color palette ---------------------------------------------------------
+
+color_palette <- colorFactor(
+  palette = c("#F20027",  # Red is 'Heeft geen ondersteuning' 
+              "#FF84B5",  # Pink is 'Heeft  ondersteuning' 
+              "#CECECE"), # Grey is 'Ondersteuning niet bekend'
+  domain = shapefile$ondersteuning_amateurkunst)
+
+# Create labels for mouseover on map visualization -----------------------------
+
+label_ondersteuning_amateurkunst <- paste0("<l1>", shapefile$gemeente, "</l1>", "<br>",
+                                           shapefile$ondersteuning_amateurkunst)
+
+```
+
+
+<center>
+
+<p><h1><font color="#ff84b5">`r shapefile |> filter(ondersteuning_amateurkunst == "Heeft ondersteuning") |> nrow()` gemeenten </font> in Noord-Brabant hebben amateurkunst-<br>ondersteuning, <font color="#f20027">`r shapefile |> filter(ondersteuning_amateurkunst == "Geen ondersteuning") |> nrow()` nog niet</font> en van <font color="#cecece"> `r shapefile |> filter(ondersteuning_amateurkunst == "Ondersteuning niet bekend") |> nrow()` niet bekend</font>
+
+</center>
+
+<br>
+<br>
+
+```{r}
+#| echo: false
+
+# Create map visualization with leaflet ----------------------------------------
+
+leaflet(shapefile,
+        width = "955px",
+        height = "500px",
+        options = leafletOptions(
+          attributionControl = FALSE,
+          zoomControl = FALSE,
+          minZoom = 9.5,
+          maxZoom = 9.5)) |>
+  addPolygons(stroke = TRUE,
+              color = "#FFFFFF",
+              weight = 1.5,
+              smoothFactor = 1,
+              opacity = 1,
+              fillOpacity = 1,
+              fillColor = ~ color_palette(shapefile$ondersteuning_amateurkunst),
+              label = lapply(label_ondersteuning_amateurkunst, htmltools::HTML),
+              labelOptions = labelOptions(noHide = FALSE,
+                                          direction = "auto",
+                                          style = list("color" = "#000000",
+                                                       "font-family" = "Montserrat",
+                                                       "font-size" = "15px",
+                                                       "font-weight" = "bold",
+                                                       "background" = "#FFFFFF",
+                                                       "border-width" = "0px",
+                                                       "border-radius" = "0px",
+                                                       "border-color" = "#000000",
+                                                       "border-style" = "solid",
+                                                       # "margin" = "50px 100px",
+                                                       "padding" = "7.9px",
+                                                       "box-shadow" = "none")))
+
+```
+
+<br>
+<br>
+
+<center>
+
+![](2023-06_amateurkunst_logo_kunstloc_brabant.png){width="175"}
+
+</center>
