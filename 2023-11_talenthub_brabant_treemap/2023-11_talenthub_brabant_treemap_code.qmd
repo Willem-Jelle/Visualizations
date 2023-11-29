@@ -3,7 +3,6 @@ title: ""
 format:
   html:
     embed-resources: true
-editor: visual
 page-layout: full
 ---
 
@@ -116,13 +115,11 @@ image_read("2023-11_talenthub_brabant_treemap_ggsave.png") |>
 
 <center>
 
-<h1>De investering van provincie Noord-Brabant<br>
-leidt tot <font color = "#FA4A9C">+`r vliegwiel_data |> filter(verdeling != "totaal_investering_door_provincie") |> summarize(sum = round(sum(percent))) |> pull(sum)`% extra financiële middelen</font><br></h1>
+<h1>De investering van provincie Noord-Brabant<br> leidt tot <font color = "#FA4A9C">+`r vliegwiel_data |> filter(verdeling != "totaal_investering_door_provincie") |> summarize(sum = round(sum(percent))) |> pull(sum)`% extra financiële middelen</font><br></h1>
 
 <br>
 
 ![](2023-11_talenthub_brabant_treemap_ggsave.png){width="775"}
-
 <br>
 
 </center>
