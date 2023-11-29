@@ -94,9 +94,7 @@ vliegwiel_data |>
                               padding.x = grid::unit(7, "mm"),
                               padding.y = grid::unit(7, "mm")) +
   theme_void() +
-  theme(legend.position = "none",
-                plot.margin = margin(b = 3,
-                             unit = "cm")) +
+  theme(legend.position = "none") +
   scale_x_reverse() +
   scale_fill_manual(values = c("#3B3A6E",
                                 "#3B3A6E"))
@@ -124,5 +122,7 @@ leidt tot <font color = "#FA4A9C">+`r vliegwiel_data |> filter(verdeling != "tot
 <br>
 
 ![](2023-11_talenthub_brabant_treemap_ggsave.png){width="775"}
+
+<br>
 
 </center>
