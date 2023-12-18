@@ -13,7 +13,7 @@ library(ggtext)
 
 # https://r-graph-gallery.com/web-stacked-area-chart-inline-labels.html
 
-# Source and read Christmas movies data ----------------------------------------
+# Source and read holiday movies data ------------------------------------------
 
 # https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-12-12/
 
