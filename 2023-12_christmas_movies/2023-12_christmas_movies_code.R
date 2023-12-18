@@ -1,20 +1,25 @@
 library(readr)
 library(dplyr)
 library(stringr)
-library(packcircles)
 library(ggplot2)
 library(showtext)
 library(monochromeR)
 library(ggstream)
 library(ggtext)
 
+# Inspired by the great 'stream graph' visualization by Gilbert Fontana --------
+
+# https://twitter.com/GilbertFontana/status/1681734005668888601
+
+# https://r-graph-gallery.com/web-stacked-area-chart-inline-labels.html
+
 # Source and read Christmas movies data ----------------------------------------
 
 # https://github.com/rfordatascience/tidytuesday/blob/master/data/2023/2023-12-12/
 
-holiday_movies <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-12-12/holiday_movies.csv")
+holiday_movies <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-12-12/holiday_movies.csv")
 
-holiday_movie_genres <- readr::read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-12-12/holiday_movie_genres.csv")
+holiday_movie_genres <- read_csv("https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-12-12/holiday_movie_genres.csv")
 
 # Filter on Christmas movies ---------------------------------------------------
 
@@ -25,10 +30,10 @@ christmas_movies <- holiday_movies |>
 
 christmas_movie_genres <- holiday_movie_genres |>
   inner_join(select(christmas_movies,
-                   tconst,
-                   primary_title,
-                   year),
-            by = "tconst") |>
+                    tconst,
+                    primary_title,
+                    year),
+             by = "tconst") |>
   filter(str_detect(genres, "Action|Comedy|Drama|Family|Horror|Romance")) |>
   filter(year >= 2003 & year <= 2023) |>
   group_by(year) |>
