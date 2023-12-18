@@ -88,7 +88,8 @@ christmas_color_palette_red <- generate_palette("#7E121D",
 
 annotate_icon <- function(position_y,
                           fa_icon,
-                          fa_icon_color)
+                          fa_icon_color,
+                          fa_icon_size)
 {
   annotate("richtext",
          x = 2017.7,
@@ -99,7 +100,7 @@ annotate_icon <- function(position_y,
                         ";",
                         "</span>"),
          family = "fa-pro-6",
-         size = 19,
+         size = fa_icon_size,
          text.color = fa_icon_color,
          label.color = NA,
          fill = NA)
@@ -226,7 +227,8 @@ christmas_movie_genres |>
   # Icon 'Actie'
   annotate_icon(position_y = 231,
                 fa_icon = "f06d",
-                fa_icon_color = "#7E121D") +
+                fa_icon_color = "#7E121D",
+                fa_icon_size = 19) +
   # Text 'Actie'
   annotate_text(position_y = 230,
                 label_text = paste0("Actie (",
@@ -236,7 +238,8 @@ christmas_movie_genres |>
   # Icon 'Komedie'
   annotate_icon(position_y = 191,
                 fa_icon = "f599",
-                fa_icon_color = "#7E121D") +
+                fa_icon_color = "#7E121D",
+                fa_icon_size = 19) +
   # Text 'Komedie'
   annotate_text(position_y = 190,
                 label_text = paste0("Komedie (",
@@ -245,8 +248,9 @@ christmas_movie_genres |>
                 label_text_color = "#7E121D") +
   # Icon 'Drama'
   annotate_icon(position_y = 141,
-                fa_icon = "f0e7",
-                fa_icon_color = "#7E121D") +
+                fa_icon = "f79d",
+                fa_icon_color = "#7E121D",
+                fa_icon_size = 23) +
   # Text 'Drama'
   annotate_text(position_y = 140,
                 label_text = paste0("Drama (",
@@ -255,8 +259,9 @@ christmas_movie_genres |>
                 label_text_color = "#7E121D") +
   # Icon 'Familie'
   annotate_icon(position_y = 101,
-                fa_icon = "e300",
-                fa_icon_color = "#F6EFF0") +
+                fa_icon = "e390",
+                fa_icon_color = "#F6EFF0",
+                fa_icon_size = 17) +
   # Text 'Familie'
   annotate_text(position_y = 100,
                 label_text = paste0("Familie (",
@@ -266,18 +271,20 @@ christmas_movie_genres |>
   # Icon 'Horror'
   annotate_icon(position_y = 73,
                 fa_icon = "f6e2",
-                fa_icon_color = "#F6EFF0") +
+                fa_icon_color = "#F6EFF0",
+                fa_icon_size = 21) +
   # Text 'Horror'
   annotate_text(position_y = 72,
                 label_text = paste0("Horror (",
                                     christmas_movie_genres_per_year |> filter(genres == "Horror") |> pull(n),
                                     ")"),
                 label_text_color = "#F6EFF0") +
-  # Icon 'Romantiek'
+  # Icon 'Romantisch'
   annotate_icon(position_y = 41,
                 fa_icon = "f004",
-                fa_icon_color = "#F6EFF0") +
-  # Text 'Romantiek'
+                fa_icon_color = "#F6EFF0",
+                fa_icon_size = 19) +
+  # Text 'Romantisch'
   annotate_text(position_y = 40,
                 label_text = paste0("Romantisch (",
                                     christmas_movie_genres_per_year |> filter(genres == "Romance") |> pull(n),
