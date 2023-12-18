@@ -61,7 +61,8 @@ christmas_movies_with_ratings <- holiday_movie_genres |>
                     num_votes,
                     year),
              by = "tconst") |>
-  distinct(tconst, .keep_all = TRUE) |>
+  distinct(tconst,
+           .keep_all = TRUE) |>
   filter(year >= 2003 & year <= 2023)
 
 # Add Google Font and FontAwesome ----------------------------------------------
@@ -78,9 +79,9 @@ showtext_auto()
 # Create Christmas color palette -----------------------------------------------
 
 christmas_color_palette_red <- generate_palette("#7E121D",
-                                         modification = "go_lighter",
-                                         n_colours = 6,
-                                         view_palette = TRUE)
+                                                modification = "go_lighter",
+                                                n_colours = 6,
+                                                view_palette = TRUE)
 
 # Custom annotate functions ----------------------------------------------------
 
@@ -92,7 +93,7 @@ annotate_icon <- function(position_y,
                           fa_icon_size)
 {
   annotate("richtext",
-         x = 2017.7,
+         x = 2017.65,
          y = position_y,
          label = paste0("<span style='font-family:fa-pro-6'>",
                         "&#x",
@@ -176,39 +177,27 @@ christmas_movie_genres |>
                                         color = NA),
         plot.background = element_rect(fill = "#F6EFF0",
                                        linewidth = 0)) +
-  ggtitle(paste0("<span style='font-family:fa-pro-6'>",
+  ggtitle(paste0("<span style='font-family:fa-pro-6;'>",
                  "&#x",
                  "f7dc",
                  ";",
                  "</span>",
                  " Populaire genres in 20 jaar kerstfilms")) +
-  # Text subtitle line 1
+  # Text subtitle
   annotate("richtext",
-           x = 2003.37,
-           y = 247,
+           x = 2003.35,
+           y = 242,
            label = paste0("Het gemiddelde IMDb-cijfer van alle ",
                           christmas_movies |> filter(year >= 2003 & year <= 2023) |> nrow(),
-                          " kerstfilms"),
+                          " kerstfilms <br>",
+                          "uitgekomen tussen ",
+                           min(christmas_movie_genres$year),
+                           " en ",
+                           max(christmas_movie_genres$year),
+                           " is een ",
+                           round(mean(christmas_movies_with_ratings$average_rating), 1)),
            hjust = 0,
-           lineheight = 0,
-           size = 15,
-           family = "Open Sans",
-           fontface = "bold",
-           text.color = "#7E121D",
-           color = NA,
-           fill = NA) +
-  # Text subtitle line 2
-  annotate("richtext",
-           x = 2003.37,
-           y = 233,
-           label = paste0("uitgekomen tussen ",
-                          min(christmas_movie_genres$year),
-                          " en ",
-                          max(christmas_movie_genres$year),
-                          " is een ",
-                          round(mean(christmas_movies_with_ratings$average_rating), 1)),
-           hjust = 0,
-           lineheight = 0,
+           lineheight = 0.4,
            size = 15,
            family = "Open Sans",
            fontface = "bold",
