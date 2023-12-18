@@ -86,7 +86,7 @@ annotate_icon <- function(position_y,
                           fa_icon_color)
 {
   annotate("richtext",
-         x = 2018.65,
+         x = 2017.7,
          y = position_y,
          label = paste0("<span style='font-family:fa-pro-6'>",
                         "&#x",
@@ -107,7 +107,7 @@ annotate_text <- function(position_y,
                           label_text_color)
 {
   annotate("richtext",
-         x = 2019,
+         x = 2018,
          y = position_y,
          label = label_text,
          hjust = 0,
@@ -274,7 +274,7 @@ christmas_movie_genres |>
                 fa_icon_color = "#F6EFF0") +
   # Text 'Romantiek'
   annotate_text(position_y = 40,
-                label_text = paste0("Liefde (",
+                label_text = paste0("Romantisch (",
                                     christmas_movie_genres_per_year |> filter(genres == "Romance") |> pull(n),
                                     ")"),
                 label_text_color = "#F6EFF0")
