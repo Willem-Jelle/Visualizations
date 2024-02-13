@@ -17,7 +17,7 @@ library(ggtext)
 measels <- tibble(year = c(2022,
                            2023),
                   measels_cases = c(942,
-                                   42207)) |>
+                                    42207)) |>
   mutate(percent = round(measels_cases / 942 * 100, 0),
          increase = round(measels_cases / 942, 0))
 
@@ -30,7 +30,7 @@ sum(measels$measels_cases)
 # Create grid for data visualization -------------------------------------------
 
 measels_grid <- expand_grid(x = 0:207,
-                    y = 0:207) |>
+                            y = 0:207) |>
   slice(1:43149) |>
   mutate(point_color = case_when(
     x <= 30 & y <= 30 ~ "2022",
@@ -52,7 +52,8 @@ showtext_auto()
 
 display.all.moma()
 
-levine_palette <- moma.colors("Levine2", n = 2,
+levine_palette <- moma.colors("Levine2",
+                              n = 2,
                               type = "discrete",
                               return_hex = TRUE)
 
