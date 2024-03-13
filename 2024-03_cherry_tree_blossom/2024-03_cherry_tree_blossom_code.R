@@ -150,7 +150,7 @@ gg_blossom <- cherry_tree_blossom |>
         axis.text.x = element_text(color = "#252525",
                                    face = "bold",
                                    size = 100,
-                                   vjust = -37.5),
+                                   vjust = -38),
         axis.text.y = element_text(color = "#252525",
                                    face = "bold",
                                    size = 100,
