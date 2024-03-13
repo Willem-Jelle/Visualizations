@@ -134,7 +134,8 @@ gg_blossom <- cherry_tree_blossom |>
            text.color = "#FF4CFF",
            color = NA,
            fill = NA) +
-  labs(title = "Kersenbloesem in Kyoto, Japan bloeit steeds vroeger") +
+  labs(title = "Kersenbloesem in Kyoto, Japan bloeit steeds vroeger",
+       subtitle = "Piekbloei elk voorjaar van 812 t/m 2023") +
   scale_x_continuous(breaks =  c(812,
                                  2023)) +
   scale_y_continuous(breaks = c(84,
@@ -162,10 +163,13 @@ gg_blossom <- cherry_tree_blossom |>
                                       hjust = 0.1,
                                       margin = margin(t = -125,
                                                       b = 50)),
-        plot.caption = element_text(face = "bold",
-                                    size = 100,
-                                    color = "#252525",
-                                    hjust = 0),
+        plot.subtitle = element_markdown(face = "bold",
+                                      size = 100,
+                                      lineheight = 0.33,
+                                      color = "#252525",
+                                      hjust = 0.025,
+                                      margin = margin(t = -90,
+                                                      b = 75)),
         panel.grid.major = element_blank(),
         panel.grid.minor = element_blank(),
         panel.background = element_rect(fill = NA,
