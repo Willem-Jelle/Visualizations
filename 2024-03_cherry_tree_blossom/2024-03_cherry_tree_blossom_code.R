@@ -18,7 +18,7 @@ library(ggtext)
 
 raw_cherry_tree_blossom <- read_csv("2024-03_cherry_tree_blossom_data.csv")
 
-# Tidy and transform data ------------------------------------------------------
+# Tidy and transform -----------------------------------------------------------
 
 cherry_tree_blossom <- raw_cherry_tree_blossom |>
   clean_names() |>
