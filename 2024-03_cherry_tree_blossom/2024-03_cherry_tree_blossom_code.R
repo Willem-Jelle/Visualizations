@@ -51,7 +51,7 @@ font_add_google("Open Sans")
 
 showtext_auto()
 
-# Colors for plot
+# Colors for plot --------------------------------------------------------------
 
 # Source cherry blossom tree color palette: https://www.color-hex.com/color-palette/26108
 
