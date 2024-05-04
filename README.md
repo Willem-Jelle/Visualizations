@@ -1,6 +1,6 @@
 
 Click on header for the code or on the visualization for the folder
-containing all the files.
+containing the data, code and visualization.
 
 ## [April 2024: Broedvogels in Nederland](https://github.com/Willem-Jelle/Projects/blob/main/2024-04_broedvogels/2024-04_broedvogels_code.R)
 
