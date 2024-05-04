@@ -80,10 +80,14 @@ showtext_auto()
 
 # Create Christmas color palette -----------------------------------------------
 
-christmas_color_palette_red <- generate_palette("#7E121D",
-                                                modification = "go_lighter",
-                                                n_colours = 6,
-                                                view_palette = TRUE)
+# Source color palette: https://r-graph-gallery.com/web-stacked-area-chart-inline-labels.html
+
+color_palette = c("#2F4B7C",
+                  "#665191",
+                  "#D45087",
+                  "#F95d6A",
+                  "#FF7C43",
+                  "#FFA600")
 
 # Custom annotate functions ----------------------------------------------------
 
@@ -123,7 +127,7 @@ annotate_text <- function(position_y,
          lineheight = 0,
          size = 17,
          family = "Open Sans",
-         fontface = "bold",
+         # fontface = "bold",
          text.color = label_text_color,
          color = NA,
          fill = NA)
@@ -143,7 +147,7 @@ annotate_year <- function(position_x,
            lineheight = 0,
            size = 17,
            family = "Open Sans",
-           fontface = "bold",
+           # fontface = "bold",
            text.color = "#F6EFF0",
            color = NA,
            fill = NA)
@@ -159,15 +163,15 @@ christmas_movie_genres |>
   geom_stream(type = "ridge",
               bw = 1,
               n_grid = 1000) +
-  scale_fill_manual(values = rev(christmas_color_palette_red)) +
+  scale_fill_manual(values = color_palette) +
   scale_x_continuous(breaks = c(seq(2003, 2023, 20))) +
   theme_void() +
   theme(legend.position = "none",
-        plot.title = element_markdown(face = "bold",
+        plot.title = element_markdown(# face = "bold",
                                       family = "Open Sans",
                                       size = 70,
                                       lineheight = 0.33,
-                                      color = "#7E121D",
+                                      color = "#2F4B7C",
                                       hjust = 0.2,
                                       margin = margin(t = 15)),
         plot.margin = margin(t = 0,
@@ -187,7 +191,7 @@ christmas_movie_genres |>
                  " Populaire genres in 20 jaar kerstfilms")) +
   # Text subtitle
   annotate("richtext",
-           x = 2003.35,
+           x = 2003.55,
            y = 242,
            label = paste0("Het gemiddelde IMDb-cijfer van alle ",
                           christmas_movies |> filter(year >= 2003 & year <= 2023) |> nrow(),
@@ -202,8 +206,8 @@ christmas_movie_genres |>
            lineheight = 0.4,
            size = 15,
            family = "Open Sans",
-           fontface = "bold",
-           text.color = "#7E121D",
+           # fontface = "bold",
+           text.color = "#2F4B7C",
            color = NA,
            fill = NA) +
   # Year 2003
@@ -218,36 +222,36 @@ christmas_movie_genres |>
   # Icon 'Actie'
   annotate_icon(position_y = 231,
                 fa_icon = "f06d",
-                fa_icon_color = "#7E121D",
+                fa_icon_color = "#2F4B7C",
                 fa_icon_size = 19) +
   # Text 'Actie'
   annotate_text(position_y = 230,
                 label_text = paste0("Actie (",
                                     christmas_movie_genres_per_year |> filter(genres == "Action") |> pull(n),
                                     ")"),
-                label_text_color = "#7E121D") +
+                label_text_color = "#2F4B7C") +
   # Icon 'Komedie'
   annotate_icon(position_y = 191,
                 fa_icon = "f599",
-                fa_icon_color = "#7E121D",
+                fa_icon_color = "#2F4B7C",
                 fa_icon_size = 19) +
   # Text 'Komedie'
   annotate_text(position_y = 190,
                 label_text = paste0("Komedie (",
                                     christmas_movie_genres_per_year |> filter(genres == "Comedy") |> pull(n),
                                     ")"),
-                label_text_color = "#7E121D") +
+                label_text_color = "#F6EFF0") +
   # Icon 'Drama'
   annotate_icon(position_y = 141,
                 fa_icon = "f79d",
-                fa_icon_color = "#7E121D",
+                fa_icon_color = "#F6EFF0",
                 fa_icon_size = 23) +
   # Text 'Drama'
   annotate_text(position_y = 140,
                 label_text = paste0("Drama (",
                                     christmas_movie_genres_per_year |> filter(genres == "Drama") |> pull(n),
                                     ")"),
-                label_text_color = "#7E121D") +
+                label_text_color = "#F6EFF0") +
   # Icon 'Familie'
   annotate_icon(position_y = 101,
                 fa_icon = "e390",
