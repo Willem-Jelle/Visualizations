@@ -14,5 +14,5 @@ containing the data, code and visualization.
 
 ## [February 2024: Measels Outbreak](https://github.com/Willem-Jelle/Projects/blob/main/2024-02_measels_outbreak/2024-02_measels_outbreak_code.R)
 
-<a href='https://github.com/Willem-Jelle/Projects/tree/main/2024-03_cherry_tree_blossom'>
+<a href='https://github.com/Willem-Jelle/Projects/tree/main/2024-02_measels_outbreak'>
 <img src='2024-02_measels_outbreak/2024-02_measels_outbreak_viz.png'/></a>
