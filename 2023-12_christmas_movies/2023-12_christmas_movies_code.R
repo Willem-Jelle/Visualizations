@@ -99,7 +99,7 @@ annotate_icon <- function(position_y,
                           fa_icon_size)
 {
   annotate("richtext",
-         x = 2017.65,
+         x = 2019.15,
          y = position_y,
          label = paste0("<span style='font-family:fa-pro-6'>",
                         "&#x",
@@ -120,12 +120,12 @@ annotate_text <- function(position_y,
                           label_text_color)
 {
   annotate("richtext",
-         x = 2018,
+         x = 2019.35,
          y = position_y,
          label = label_text,
          hjust = 0,
          lineheight = 0,
-         size = 17,
+         size = 21,
          family = "Open Sans",
          # fontface = "bold",
          text.color = label_text_color,
@@ -145,10 +145,10 @@ annotate_year <- function(position_x,
            label = label_text,
            hjust = 0,
            lineheight = 0,
-           size = 17,
+           size = 21,
            family = "Open Sans",
            # fontface = "bold",
-           text.color = "#F6EFF0",
+           text.color = "#F9F9F9",
            color = NA,
            fill = NA)
 }
@@ -169,19 +169,24 @@ christmas_movie_genres |>
   theme(legend.position = "none",
         plot.title = element_markdown(# face = "bold",
                                       family = "Open Sans",
-                                      size = 70,
+                                      size = 150,
                                       lineheight = 0.33,
                                       color = "#2F4B7C",
-                                      hjust = 0.2,
+                                      hjust = 0.25,
                                       margin = margin(t = 15)),
-        plot.margin = margin(t = 0,
-                             r = -1.1,
-                             b = -0.55,
-                             l = -1.1,
-                             unit = "cm"),
-        panel.background = element_rect(fill = "#F6EFF0",
+        # plot.margin = margin(t = 0,
+        #                      r = -1.1,
+        #                      b = -0.55,
+        #                      l = -1.1,
+        #                      unit = "cm"),
+        plot.margin = margin(t = 175,
+                             r = 50,
+                             b = 175,
+                             l = 50,
+                             unit = "pt"),
+        panel.background = element_rect(fill = "#F9F9F9",
                                         color = NA),
-        plot.background = element_rect(fill = "#F6EFF0",
+        plot.background = element_rect(fill = "#F9F9F9",
                                        linewidth = 0)) +
   ggtitle(paste0("<span style='font-family:fa-pro-6;'>",
                  "&#x",
@@ -191,7 +196,7 @@ christmas_movie_genres |>
                  " Populaire genres in 20 jaar kerstfilms")) +
   # Text subtitle
   annotate("richtext",
-           x = 2003.55,
+           x = 2003,
            y = 242,
            label = paste0("Het gemiddelde IMDb-cijfer van alle ",
                           christmas_movies |> filter(year >= 2003 & year <= 2023) |> nrow(),
@@ -204,7 +209,7 @@ christmas_movie_genres |>
                            round(mean(christmas_movies_with_ratings$average_rating), 1)),
            hjust = 0,
            lineheight = 0.4,
-           size = 15,
+           size = 25,
            family = "Open Sans",
            # fontface = "bold",
            text.color = "#2F4B7C",
@@ -220,75 +225,75 @@ christmas_movie_genres |>
   annotate_year(position_x = 2021.55,
                 label_text = max(christmas_movie_genres$year)) +
   # Icon 'Actie'
-  annotate_icon(position_y = 231,
+  annotate_icon(position_y = 211.5,
                 fa_icon = "f06d",
-                fa_icon_color = "#2F4B7C",
+                fa_icon_color = "#F9F9F9",
                 fa_icon_size = 19) +
   # Text 'Actie'
-  annotate_text(position_y = 230,
+  annotate_text(position_y = 211,
                 label_text = paste0("Actie (",
                                     christmas_movie_genres_per_year |> filter(genres == "Action") |> pull(n),
                                     ")"),
-                label_text_color = "#2F4B7C") +
+                label_text_color = "#F9F9F9") +
   # Icon 'Komedie'
-  annotate_icon(position_y = 191,
+  annotate_icon(position_y = 180.5,
                 fa_icon = "f599",
-                fa_icon_color = "#2F4B7C",
+                fa_icon_color = "#F9F9F9",
                 fa_icon_size = 19) +
   # Text 'Komedie'
-  annotate_text(position_y = 190,
+  annotate_text(position_y = 180,
                 label_text = paste0("Komedie (",
                                     christmas_movie_genres_per_year |> filter(genres == "Comedy") |> pull(n),
                                     ")"),
-                label_text_color = "#F6EFF0") +
+                label_text_color = "#F9F9F9") +
   # Icon 'Drama'
   annotate_icon(position_y = 141,
                 fa_icon = "f79d",
-                fa_icon_color = "#F6EFF0",
+                fa_icon_color = "#F9F9F9",
                 fa_icon_size = 23) +
   # Text 'Drama'
   annotate_text(position_y = 140,
                 label_text = paste0("Drama (",
                                     christmas_movie_genres_per_year |> filter(genres == "Drama") |> pull(n),
                                     ")"),
-                label_text_color = "#F6EFF0") +
+                label_text_color = "#F9F9F9") +
   # Icon 'Familie'
   annotate_icon(position_y = 101,
                 fa_icon = "e390",
-                fa_icon_color = "#F6EFF0",
+                fa_icon_color = "#F9F9F9",
                 fa_icon_size = 17) +
   # Text 'Familie'
   annotate_text(position_y = 100,
                 label_text = paste0("Familie (",
                                     christmas_movie_genres_per_year |> filter(genres == "Family") |> pull(n),
                                     ")"),
-                label_text_color = "#F6EFF0") +
+                label_text_color = "#F9F9F9") +
   # Icon 'Horror'
   annotate_icon(position_y = 73,
                 fa_icon = "f6e2",
-                fa_icon_color = "#F6EFF0",
+                fa_icon_color = "#F9F9F9",
                 fa_icon_size = 21) +
   # Text 'Horror'
   annotate_text(position_y = 72,
                 label_text = paste0("Horror (",
                                     christmas_movie_genres_per_year |> filter(genres == "Horror") |> pull(n),
                                     ")"),
-                label_text_color = "#F6EFF0") +
+                label_text_color = "#F9F9F9") +
   # Icon 'Romantisch'
   annotate_icon(position_y = 41,
                 fa_icon = "f004",
-                fa_icon_color = "#F6EFF0",
+                fa_icon_color = "#F9F9F9",
                 fa_icon_size = 19) +
   # Text 'Romantisch'
   annotate_text(position_y = 40,
                 label_text = paste0("Romantisch (",
                                     christmas_movie_genres_per_year |> filter(genres == "Romance") |> pull(n),
                                     ")"),
-                label_text_color = "#F6EFF0")
+                label_text_color = "#F9F9F9")
 
 ggsave("2023-12_christmas_movies_viz.png",
-       width = 2500,
-       height = 1500,
+       width = 5000, 
+       height = 5000, # Was 2500
        units = "px",
        dpi = 300,
-       bg = "#F6EFF0")
+       bg = "#F9F9F9")
