@@ -61,7 +61,7 @@ pc_hoofdlijnenakkoord <- cbind(tidy_hoofdlijnenakkoord,
   unite("woord_en_aantal",
         c("word",
           "aantal"),
-        sep = "\n(",
+        sep = " (",
         remove = FALSE) |>
   mutate(woord_en_aantal = paste0(woord_en_aantal, ")"))
 
@@ -78,7 +78,8 @@ moma.colors("Levine2",
 
 # Add Google font --------------------------------------------------------------
 
-font_add_google("Lato")
+font_add_google("Lato",
+                bold.wt = 700)
 
 showtext_auto()
 
@@ -98,7 +99,7 @@ ggplot() + geom_polygon(data = pc_dat_gg,
                 label = woord_en_aantal,
                 size = aantal),
             family = "Lato",
-            # fontface = "bold",
+            fontface = "bold",
             lineheight = 0.33,
             color = "#F4E7D5") +
   ggtitle("25 meestgebruikte woorden hoofdlijnenakkoord \n 2024-2028 van PVV, VVD, NSC en BBB") +
@@ -106,6 +107,7 @@ ggplot() + geom_polygon(data = pc_dat_gg,
   theme(legend.position = "none",
         plot.title = element_text(size = 175,
                                   family = "Lato",
+                                  face = "bold",
                                   lineheight = 0.39,
                                   color = "#252525",
                                   hjust = 0.5,
@@ -114,7 +116,7 @@ ggplot() + geom_polygon(data = pc_dat_gg,
                                                       r = 0,
                                                       b = 25,
                                                       l = 0))) +
-  scale_size_continuous(range = c(25, 40))
+  scale_size_continuous(range = c(20, 39))
 
 ggsave("2024-05_hoofdlijnenakkoord_viz.png",
        width = 6000,
