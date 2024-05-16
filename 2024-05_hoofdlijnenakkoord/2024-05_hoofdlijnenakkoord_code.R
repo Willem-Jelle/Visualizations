@@ -115,8 +115,13 @@ ggplot() + geom_polygon(data = pc_dat_gg,
                                   margin = margin(t = 25,
                                                       r = 0,
                                                       b = 25,
-                                                      l = 0))) +
-  scale_size_continuous(range = c(27, 39))
+                                                      l = 0)),
+        plot.margin = margin(t = 70,
+                             r = 70,
+                             b = 70,
+                             l = 70,
+                             unit = "pt")) +
+  scale_size_continuous(range = c(23, 39))
 
 ggsave("2024-05_hoofdlijnenakkoord_viz.png",
        width = 6000,
