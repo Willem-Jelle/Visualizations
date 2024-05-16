@@ -122,7 +122,7 @@ gg_viz <- trend_broedvogels |>
   geom_text(aes(x = 2006,
                 y = max_label_y,
                 label = naam_broedvogel),
-            size = 19) +
+            size = 5.9) +
   geom_segment(aes(x = min(jaar),
                    xend = max(jaar),
                    y = min_label_y,
@@ -145,7 +145,7 @@ gg_viz <- trend_broedvogels |>
         panel.grid.major = element_blank(),
         panel.spacing.x = unit(25, "pt"),
         panel.spacing.y = unit(25, "pt"),
-        plot.title = element_markdown(size = 110,
+        plot.title = element_markdown(size = 35,
                                       color = "#252525",
                                       hjust = 0.5,
                                       margin = margin(t = 5,
@@ -153,7 +153,7 @@ gg_viz <- trend_broedvogels |>
                                                       b = 50,
                                                       l = 0)),
         strip.text = element_blank(),
-        plot.caption = element_text(size = 55,
+        plot.caption = element_text(size = 19,
                                     color = "#252525",
                                     hjust = 0.5,
                                     margin = margin(t = 50,
