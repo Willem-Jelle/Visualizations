@@ -42,13 +42,13 @@ tidy_hoofdlijnenakkoord <- raw_hoofdlijnenakkoord |>
   # Rename and conflate some words
   mutate(word = str_replace_all(word, c("Eu" = "EU",
                                         "^Nederland.*" = "Nederland",
-                                        "^Wij$" = "We",
                                         "^Nieuwe$" = "Nieuw",
-                                        "^Onze$" = "Ons"))) |>
+                                        "^Onze$" = "Ons",
+                                        "^Wij$" = "We"))) |>
   count(word,
         sort = TRUE,
         name = "aantal") |>
-  # Limited number of words to 25
+  # Limit number of words to 25
   head(n = 25)
 
 # Prepare data for visualization -----------------------------------------------
@@ -63,7 +63,8 @@ pc_hoofdlijnenakkoord <- cbind(tidy_hoofdlijnenakkoord,
           "aantal"),
         sep = "\n(",
         remove = FALSE) |>
-  mutate(woord_en_aantal = paste0(woord_en_aantal, ")"))
+  mutate(woord_en_aantal = paste0(woord_en_aantal,
+                                  ")"))
 
 pc_dat_gg <- circleLayoutVertices(pc_packing,
                                             npoints = 100)
