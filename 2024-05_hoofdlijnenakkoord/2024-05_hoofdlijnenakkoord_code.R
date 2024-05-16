@@ -61,7 +61,7 @@ pc_hoofdlijnenakkoord <- cbind(tidy_hoofdlijnenakkoord,
   unite("woord_en_aantal",
         c("word",
           "aantal"),
-        sep = " (",
+        sep = "\n(",
         remove = FALSE) |>
   mutate(woord_en_aantal = paste0(woord_en_aantal, ")"))
 
@@ -116,7 +116,7 @@ ggplot() + geom_polygon(data = pc_dat_gg,
                                                       r = 0,
                                                       b = 25,
                                                       l = 0))) +
-  scale_size_continuous(range = c(20, 39))
+  scale_size_continuous(range = c(27, 39))
 
 ggsave("2024-05_hoofdlijnenakkoord_viz.png",
        width = 6000,
