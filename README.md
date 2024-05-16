@@ -2,6 +2,11 @@
 Click on header for the code or on the visualization for the folder
 containing the data, code and visualization.
 
+## [Mei 2024: Hoofdlijnenakkoord](https://github.com/Willem-Jelle/Visualizations/blob/main/2024-05_hoofdlijnenakkoord/2024-05_hoofdlijnenakkoord_code.R)
+
+<a href='https://github.com/Willem-Jelle/Visualizations/blob/main/2024-05_hoofdlijnenakkoord'>
+<img src='2024-05_hoofdlijnenakkoord/2024-05_hoofdlijnenakkoord_viz.png'/></a>
+
 ## [April 2024: Broedvogels in Nederland](https://github.com/Willem-Jelle/Visualizations/blob/main/2024-04_broedvogels/2024-04_broedvogels_code.R)
 
 <a href='https://github.com/Willem-Jelle/Visualizations/blob/main/2024-04_broedvogels'>
