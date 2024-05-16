@@ -88,7 +88,7 @@ ggplot() + geom_polygon(data = pc_dat_gg,
                         aes(x,
                             y,
                             group = id),
-                        fill = "#AD5A6B",
+                        fill = "#4D8F8B",
                         colour = "#F4E7D5",
                         size = 9,
                         alpha = 1) +
