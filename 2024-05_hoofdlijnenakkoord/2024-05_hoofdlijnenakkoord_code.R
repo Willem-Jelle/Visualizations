@@ -7,9 +7,9 @@ library(stopwords)
 library(stringr)
 library(dplyr)
 library(packcircles)
+library(MoMAColors)
 library(showtext)
 library(ggplot2)
-library(MoMAColors)
 
 # Source of hoofdlijnenakkoord: https://files.tweedekamer.nl/sites/default/files/2024-05/20240515%202024D19455%20-%20Coalitieakkoord%202024-2028%20HOOP%2C%20LEF%20EN%20TROTS%20%283%29.pdf
 
@@ -17,7 +17,7 @@ library(MoMAColors)
 
 text_hoofdlijnenakkoord <- pdf_text("2024-05_hoofdlijnenakkoord_doc.pdf")
 
-# Convert to tibble as data ----------------------------------------------------
+# Convert document to data -----------------------------------------------------
 
 raw_hoofdlijnenakkoord <- tibble(text_hoofdlijnenakkoord = text_hoofdlijnenakkoord)
 
@@ -39,7 +39,7 @@ tidy_hoofdlijnenakkoord <- raw_hoofdlijnenakkoord |>
                     negate = TRUE)) |>
   # Filter tokens less than 1 character
   filter(str_count(word) > 1) |>
-  # Rename some words
+  # Rename and conflate some words
   mutate(word = str_replace_all(word, c("Eu" = "EU",
                                         "^Nederland.*" = "Nederland",
                                         "^Wij$" = "We",
@@ -85,14 +85,15 @@ showtext_auto()
 
 # Create ans save visualization ------------------------------------------------
 
-ggplot() + geom_polygon(data = pc_dat_gg,
-                        aes(x,
-                            y,
-                            group = id),
-                        fill = "#4D8F8B",
-                        colour = "#F4E7D5",
-                        size = 9,
-                        alpha = 1) +
+ggplot() +
+  geom_polygon(data = pc_dat_gg,
+               aes(x,
+                   y,
+                   group = id),
+               fill = "#4D8F8B",
+               colour = "#F4E7D5",
+               size = 9,
+               alpha = 1) +
   geom_text(data = pc_hoofdlijnenakkoord,
             aes(x,
                 y,
@@ -121,7 +122,8 @@ ggplot() + geom_polygon(data = pc_dat_gg,
                              b = 70,
                              l = 70,
                              unit = "pt")) +
-  scale_size_continuous(range = c(23, 39))
+  scale_size_continuous(range = c(23,
+                                  39))
 
 ggsave("2024-05_hoofdlijnenakkoord_viz.png",
        width = 6000,
