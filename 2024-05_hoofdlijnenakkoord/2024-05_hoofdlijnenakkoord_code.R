@@ -7,8 +7,8 @@ library(stopwords)
 library(stringr)
 library(dplyr)
 library(packcircles)
-library(MoMAColors)
 library(showtext)
+library(monochromeR)
 library(ggplot2)
 
 # Source of hoofdlijnenakkoord: https://files.tweedekamer.nl/sites/default/files/2024-05/20240515%202024D19455%20-%20Coalitieakkoord%202024-2028%20HOOP%2C%20LEF%20EN%20TROTS%20%283%29.pdf
@@ -40,7 +40,7 @@ tidy_hoofdlijnenakkoord <- raw_hoofdlijnenakkoord |>
   # Filter tokens less than 1 character
   filter(str_count(word) > 1) |>
   # Rename and conflate some words
-  mutate(word = str_replace_all(word, c("Eu" = "EU",
+  mutate(word = str_replace_all(word, c("^Eu$" = "EU",
                                         "^Nederland.*" = "Nederland",
                                         "^Nieuwe$" = "Nieuw",
                                         "^Onze$" = "Ons",
@@ -49,7 +49,15 @@ tidy_hoofdlijnenakkoord <- raw_hoofdlijnenakkoord |>
         sort = TRUE,
         name = "aantal") |>
   # Limit number of words to 25
-  head(n = 25)
+  head(n = 25) |>
+  mutate(circle_id = row_number(),
+         circle_color = case_when(
+           aantal == min(aantal) ~ "#ABCAC8",
+           aantal == max(aantal) ~ "#234240",
+           .default = "#4D8F8B"),
+         circle_font_color = case_when(
+           aantal == min(aantal) ~ "#234240",
+           .default = "#F4E7D5"))
 
 # Prepare data for visualization -----------------------------------------------
 
@@ -67,7 +75,11 @@ pc_hoofdlijnenakkoord <- cbind(tidy_hoofdlijnenakkoord,
                                   ")"))
 
 pc_dat_gg <- circleLayoutVertices(pc_packing,
-                                            npoints = 100)
+                                  npoints = 100) |>
+  left_join(select(tidy_hoofdlijnenakkoord,
+                   circle_id,
+                   circle_color),
+            by = c("id" = "circle_id"))
 
 # Musem of Modern Art color palette --------------------------------------------
 
@@ -91,9 +103,9 @@ ggplot() +
                aes(x,
                    y,
                    group = id),
-               fill = "#4D8F8B",
+               fill = pc_dat_gg$circle_color,
                colour = "#F4E7D5",
-               size = 9,
+               linewidth = 9,
                alpha = 1) +
   geom_text(data = pc_hoofdlijnenakkoord,
             aes(x,
@@ -103,7 +115,7 @@ ggplot() +
             family = "Lato",
             fontface = "bold",
             lineheight = 0.33,
-            color = "#F4E7D5") +
+            color = pc_hoofdlijnenakkoord$circle_font_color) +
   ggtitle("25 meestgebruikte woorden hoofdlijnenakkoord \n 2024-2028 van PVV, VVD, NSC en BBB") +
   theme_void() + 
   theme(legend.position = "none",
