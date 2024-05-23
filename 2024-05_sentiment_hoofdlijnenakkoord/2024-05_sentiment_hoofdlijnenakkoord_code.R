@@ -91,6 +91,11 @@ plot_subtitle <- paste0("<span style = 'color:",
                         "#6DC5B2",
                         ";'>",
                         "Positief",
+                        paste0(" (",
+                               import_sentiment_hoofdlijnen_akkoord |>
+                                 filter(manual_sentiment == "positive") |>
+                                 nrow(),
+                               ")"),
                         "</span>",
                         "<span style = 'color:",
                         "#252525",
@@ -98,9 +103,14 @@ plot_subtitle <- paste0("<span style = 'color:",
                         " | ",
                         "</span>",
                         "<span style = 'color:",
-                        "#EAD0AF",
+                        "#E6C8A2",
                         ";'>",
-                        "Neutraal ",
+                        "Neutraal",
+                        paste0(" (",
+                               import_sentiment_hoofdlijnen_akkoord |>
+                                 filter(manual_sentiment == "neutral") |>
+                                 nrow(),
+                               ")"),
                         "</span>",
                         "<span style = 'color:",
                         "#252525",
@@ -108,9 +118,14 @@ plot_subtitle <- paste0("<span style = 'color:",
                         " | ",
                         "</span>",
                         "<span style = 'color:",
-                        "#db95cb",
+                        "#DB95CB",
                         ";'>",
                         "Negatief",
+                        paste0(" (",
+                               import_sentiment_hoofdlijnen_akkoord |>
+                                 filter(manual_sentiment == "negative") |>
+                                 nrow(),
+                               ")"),
                         "</span>")
 
 # Musem of Modern Art color palette --------------------------------------------
@@ -128,8 +143,8 @@ moma.colors("Flash",
 # Create color palette ---------------------------------------------------------
 
 color_palette <- c("positive" = "#6DC5B2",
-                   "negative" = "#db95cb",
-                   "neutral" = "#EAD0AF")
+                   "negative" = "#DB95CB",
+                   "neutral" = "#E6C8A2")
 
 # Visualize data and save visualization ----------------------------------------
 
@@ -182,8 +197,7 @@ import_sentiment_hoofdlijnen_akkoord |>
     facet_wrap(~ category,
                nrow = 3,
                ncol = 3,
-               scales = "free_y",
-               labeller = labeller(paste0(import_sentiment_hoofdlijnen_akkoord$category, "Test"))) +
+               scales = "free_y") +
   scale_fill_manual(values = color_palette)
 
 ggsave("2024-05_sentiment_hoofdlijnenakkoord_viz.png",
