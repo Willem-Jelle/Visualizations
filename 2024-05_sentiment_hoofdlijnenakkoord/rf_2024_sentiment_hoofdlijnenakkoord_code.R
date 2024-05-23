@@ -138,7 +138,6 @@ import_sentiment_hoofdlijnen_akkoord |>
   geom_col(width = 0.5) +
   labs(title = "Sentiment per onderwerp in hoofdlijnenakkoord \n 2024-2028 van PVV, VVD, NCS en BBB",
        subtitle = plot_subtitle) +
-  # theme_minimal(base_family = "Lato") +
   theme_void(base_family = "Merriweather") +
   theme(legend.position = "none",
         panel.spacing.x = unit(25, "pt"),
