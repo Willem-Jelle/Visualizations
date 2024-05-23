@@ -13,7 +13,7 @@ library(ggtext)
 library(MoMAColors)
 library(ggplot2)
 
-# Source of hoofdlijnenakkoord: https://files.tweedekamer.nl/sites/default/files/2024-05/20240515%202024D19455%20-%20Coalitieakkoord%202024-2028%20HOOP%2C%20LEF%20EN%20TROTS%20%283%29.pdf
+# Source of 'Hoofdlijnenakkoord': https://files.tweedekamer.nl/sites/default/files/2024-05/20240515%202024D19455%20-%20Coalitieakkoord%202024-2028%20HOOP%2C%20LEF%20EN%20TROTS%20%283%29.pdf
 
 # Import pdf 'Hoofdlijnenakkoord' as text --------------------------------------
 
@@ -42,7 +42,7 @@ export_sentiment_hoofdlijnenakkoord <- raw_hoofdlijnenakkoord |>
          sentence = str_remove_all(sentence, "[[:digit:]]$"),
          sentence = str_remove(sentence, "[[:punctuation:]]"),
          sentence = str_squish(sentence)) |>
-  # Dutch sentiment anaylsis on sentences from 'hoofdlijnenakkoord' document
+  # Dutch sentiment anaylsis on sentences from 'Hoofdlijnenakkoord' document
   mutate(ml_score = dutch_sentiment_analysis(sentence),
          ml_sentiment = dutch_sentiment_analysis(sentence,
                                           output = "label")) |>
@@ -63,15 +63,17 @@ export_sentiment_hoofdlijnenakkoord <- raw_hoofdlijnenakkoord |>
   # Add column for manual sentiment corrections
   mutate(manual_sentiment = ml_sentiment,
          .after = ml_sentiment) |>
-  # Sort form A to Z
+  # Sort from A to Z
   arrange(category)
 
-# Export 'sentiment_hoofdlijnenakkoord' to .xlsx for manual sentiment classification -----
+# Export 'sentiment_hoofdlijnenakkoord' to .xlsx for manual --------------------
+# sentiment classification (done in Excel for convenience) ---------------------
 
 write_xlsx(export_sentiment_hoofdlijnenakkoord,
            "2024-05_sentiment_hoofdlijnenakkoord_data_export.xlsx")
 
-# Import "2024-05_sentiment_hoofdlijnenakkoord_data_import.xlsx' with added manual sentiment classication (done in Excel for convienence) -----
+# Import "2024-05_sentiment_hoofdlijnenakkoord_data_import.xlsx' with ----------
+# added manual sentiment classication (done in Excel for convenience) ----------
 
 import_sentiment_hoofdlijnen_akkoord <- read_xlsx("2024-05_sentiment_hoofdlijnenakkoord_data_import.xlsx")
 
@@ -84,12 +86,6 @@ showtext_auto()
 # Create plot subtitle with some styling ---------------------------------------
 
 plot_subtitle <- paste0("<span style = 'color:",
-                        "#252525",
-                        ";'>",
-                        "Elke horizontale lijn is een zin",
-                        "</span>",
-                        "<br>",
-                        "<span style = 'color:",
                         "#6DC5B2",
                         ";'>",
                         "Positief",
@@ -100,7 +96,7 @@ plot_subtitle <- paste0("<span style = 'color:",
                         " | ",
                         "</span>",
                         "<span style = 'color:",
-                        "#DFB986",
+                        "#EAD0AF",
                         ";'>",
                         "Neutraal ",
                         "</span>",
@@ -110,7 +106,7 @@ plot_subtitle <- paste0("<span style = 'color:",
                         " | ",
                         "</span>",
                         "<span style = 'color:",
-                        "#D8537d",
+                        "#db95cb",
                         ";'>",
                         "Negatief",
                         "</span>")
@@ -123,13 +119,17 @@ moma.colors("Sidhu",
             type = "discrete",
             return_hex = TRUE)
 
+moma.colors("Flash",
+            type = "discrete",
+            return_hex = TRUE)
+
 # Create color palette ---------------------------------------------------------
 
 color_palette <- c("positive" = "#6DC5B2",
-                   "negative" = "#D8537d",
-                   "neutral" = "#DFB986")
+                   "negative" = "#db95cb",
+                   "neutral" = "#EAD0AF")
 
-# Plot -------------------------------------------------------------------------
+# Visualize data and save visualization ----------------------------------------
 
 import_sentiment_hoofdlijnen_akkoord |>
   arrange(id) |>
@@ -138,13 +138,15 @@ import_sentiment_hoofdlijnen_akkoord |>
                          decreasing = TRUE),
              fill = manual_sentiment)) +
   geom_col(width = 0.5) +
-  labs(title = "Sentiment per onderwerp in hoofdlijnenakkoord \n 2024-2028 van PVV, VVD, NCS en BBB",
+  labs(title = paste0("Sentiment per onderwerp in hoofdlijnenakkoord",
+                      "\n",
+                      "2024-2028 van PVV, VVD, NCS en BBB"),
        subtitle = plot_subtitle) +
   theme_void(base_family = "Merriweather") +
   theme(legend.position = "none",
         panel.spacing.x = unit(25, "pt"),
         panel.spacing.y = unit(25, "pt"),
-        strip.text = element_text(size = 59,
+        strip.text = element_text(size = 63,
                                   face = "bold",
                                   color = "#252525",
                                   hjust = 0.5,
@@ -152,7 +154,7 @@ import_sentiment_hoofdlijnen_akkoord |>
                                                   r = 0,
                                                   b = 30,
                                                   l = 0)),
-        plot.title = element_text(size = 95,
+        plot.title = element_text(size = 93,
                                   face = "bold",
                                   color = "#252525",
                                   lineheight = 0.39,
@@ -161,7 +163,7 @@ import_sentiment_hoofdlijnen_akkoord |>
                                                       r = 0,
                                                       b = 25,
                                                       l = 0)),
-        plot.subtitle = element_markdown(size = 59,
+        plot.subtitle = element_markdown(size = 63,
                                          lineheight = 0.5,
                                          hjust = 0.5,
                                          face = "bold",
