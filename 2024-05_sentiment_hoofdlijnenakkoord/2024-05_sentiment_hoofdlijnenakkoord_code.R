@@ -15,6 +15,8 @@ library(ggplot2)
 
 # Source of 'Hoofdlijnenakkoord': https://files.tweedekamer.nl/sites/default/files/2024-05/20240515%202024D19455%20-%20Coalitieakkoord%202024-2028%20HOOP%2C%20LEF%20EN%20TROTS%20%283%29.pdf
 
+# Source of Dutch Sentiment Analysis: https://github.com/Glender/DutchSentimentAnalysis
+
 # Import pdf 'Hoofdlijnenakkoord' as text --------------------------------------
 
 text_hoofdlijnenakkoord <- pdf_text("2024-05_hoofdlijnenakkoord_doc.pdf")
