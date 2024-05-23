@@ -49,7 +49,8 @@ tidy_hoofdlijnenakkoord <- raw_hoofdlijnenakkoord |>
         sort = TRUE,
         name = "aantal") |>
   # Limit number of words to 25
-  head(n = 25) |>
+  head(n = 25)
+
   mutate(circle_id = row_number(),
          circle_color = case_when(
            aantal == min(aantal) ~ "#ABCAC8",
