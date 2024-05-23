@@ -2,7 +2,7 @@
 Click on header for the code or on the visualization for the folder
 containing the data, code and visualization.
 
-## [Mei 2024: Hoofdlijnenakkoord #2](https://github.com/Willem-Jelle/Visualizations/blob/main/2024-05_sentiment_hoofdlijnenakkoord/2024-05_sentiment_hoofdlijnenakkoord_code.R)
+## [Mei 2024: Hoofdlijnenakkoord #2](https://github.com/Willem-Jelle/Visualizations/blob/main/2024-05_sentiment_hoofdlijnenakkoord/2024-05_sentiment_hoofdlijnenakkoord_code.R.R)
 
 <a href='https://github.com/Willem-Jelle/Visualizations/blob/main/2024-05_sentiment_hoofdlijnenakkoord'>
 <img src='2024-05_sentiment_hoofdlijnenakkoord/2024-05_sentiment_hoofdlijnenakkoord_viz.png'/></a>
