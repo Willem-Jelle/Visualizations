@@ -42,11 +42,11 @@ export_sentiment_hoofdlijnenakkoord <- raw_hoofdlijnenakkoord |>
          sentence = str_remove_all(sentence, "[[:digit:]]$"),
          sentence = str_remove(sentence, "[[:punctuation:]]"),
          sentence = str_squish(sentence)) |>
-  # Dutch sentiment anaylsis on sentences from 'hoofdlijnenakkoord'
+  # Dutch sentiment anaylsis on sentences from 'hoofdlijnenakkoord' document
   mutate(ml_score = dutch_sentiment_analysis(sentence),
          ml_sentiment = dutch_sentiment_analysis(sentence,
                                           output = "label")) |>
-  # Make categories
+  # Create six categories
   mutate(category = case_when(
     str_detect(sentence, ".*wonen.*|.*^woning$.*") ~ "Wonen",
     str_detect(sentence, ".*asiel.*|.*migratie.*") ~ "Asiel en migratie",
@@ -55,21 +55,23 @@ export_sentiment_hoofdlijnenakkoord <- raw_hoofdlijnenakkoord |>
     str_detect(sentence, ".*onderwijs.*") ~ "Onderwijs",
     str_detect(sentence, ".*veiligheid.*") ~ "Veiligheid",
     .default = NA)) |>
-  # Filter on NA
+  # Filter NA's
   filter(!is.na(category)) |>
   # Add id
   mutate(id = row_number(),
          .before = sentence) |>
+  # Add column for manual sentiment corrections
   mutate(manual_sentiment = ml_sentiment,
          .after = ml_sentiment) |>
+  # Sort form A to Z
   arrange(category)
 
-# Export 'sentiment_hoofdlijnenakkoord' to .csv for manual sentiment classification -----
+# Export 'sentiment_hoofdlijnenakkoord' to .xlsx for manual sentiment classification -----
 
 write_xlsx(export_sentiment_hoofdlijnenakkoord,
            "2024-05_sentiment_hoofdlijnenakkoord_data_export.xlsx")
 
-# Import "2024-05_sentiment_hoofdlijnenakkoord_data_import.xlsx' with added manual sentiment classication -----
+# Import "2024-05_sentiment_hoofdlijnenakkoord_data_import.xlsx' with added manual sentiment classication (done in Excel for convienence) -----
 
 import_sentiment_hoofdlijnen_akkoord <- read_xlsx("2024-05_sentiment_hoofdlijnenakkoord_data_import.xlsx")
 
@@ -178,7 +180,7 @@ import_sentiment_hoofdlijnen_akkoord |>
                ncol = 3,
                scales = "free_y",
                labeller = labeller(paste0(import_sentiment_hoofdlijnen_akkoord$category, "Test"))) +
-  scale_fill_manual(values = rev(color_palette))
+  scale_fill_manual(values = color_palette)
 
 ggsave("2024-05_sentiment_hoofdlijnenakkoord_viz.png",
        width = 3507.9,
