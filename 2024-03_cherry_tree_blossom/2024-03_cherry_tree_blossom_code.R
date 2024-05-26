@@ -11,6 +11,7 @@ library(showtext)
 library(monochromeR)
 library(ggplot2)
 library(ggtext)
+library(patchwork)
 
 # Source of cherry tree blossom data: https://ourworldindata.org/grapher/date-of-the-peak-cherry-tree-blossom-in-kyoto
 
@@ -200,7 +201,7 @@ gg_blossom + inset_element(png_trunk,
 
 # Export and save visualization
 
-ggsave("2024-03_cherry_tree_blossom_viz.png",
+ggsave("2024-05_cherry_tree_blossom_viz.png",
        width = 7500,
        height = 7500,
        units = "px",
