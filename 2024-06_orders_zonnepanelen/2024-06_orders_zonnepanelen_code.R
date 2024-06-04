@@ -76,7 +76,7 @@ orders_zonnepanelen |>
            text.color = "#252525",
            color = NA,
            fill = NA) +
-  geom_curve(x = 1.7,
+  geom_curve(x = 1.69,
              xend = 2.1,
              y = 50,
              yend = 77,
