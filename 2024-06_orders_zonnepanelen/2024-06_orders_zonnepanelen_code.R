@@ -42,13 +42,29 @@ showtext_auto()
 color_palette <- c("Augustus 2023" = "#FFBA1B",
                    "Juni 2024" = "#FFBA1B")
 
+# Test -------------------------------------------------------------------------
+
+?seq
+
+seq(0, 100, by = 20)
+
+?geom_line
+
+?geom_hline
+
 # Visualize data and save visualization ----------------------------------------
 
 orders_zonnepanelen |>
   ggplot(aes(x = date,
              y = orders_perc,
              fill = date)) +
-  geom_col(width = 0.75) +
+  geom_col(width = 0.7) +
+  # geom_hline(yintercept = seq(0.1, 100.1, by = 5),
+  #            linewidth = 1.75,
+  #            color = "#F4E7D5") +
+  # geom_vline(xintercept = seq(0, 3, by = 0.15),
+  #            linewidth = 1.75,
+  #            color = "#F4E7D5") +
   geom_point(aes(x = date,
                  y = orders_perc + 5),
              size = 25,
@@ -83,7 +99,7 @@ orders_zonnepanelen |>
              curvature = 0.33,
              angle = 90,
              color = "#252525",
-             linewidth = 5) +
+             linewidth = 4) +
   xlab("") +
   ylab("") +
   theme_minimal(base_family = "Open Sans") +
@@ -92,13 +108,13 @@ orders_zonnepanelen |>
         panel.grid.minor = element_blank(),
         axis.text.y = element_blank(),
         axis.text.x = element_text(size = 130,
-                                   color = "#F4E7D5",
+                                   color = "#252525",
                                    face = "bold",
-                                   vjust = 11.5),
-        plot.margin = margin(t = 125,
+                                   vjust = 3),
+        plot.margin = margin(t = 100,
                              r = 50,
-                             b = 50,
-                             l = 100,
+                             b = 100,
+                             l = 50,
                              unit = "pt")) +
   scale_fill_manual(values = color_palette)
 
