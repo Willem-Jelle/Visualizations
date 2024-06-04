@@ -2,6 +2,11 @@
 Click on header for the code or on the visualization for the folder
 containing the data, code and visualization.
 
+## [Juni 2024: Orders zonnepanelen](https://github.com/Willem-Jelle/Visualizations/blob/main/2024-06_orders_zonnepanelen/2024-06_orders_zonnepanelen_code.R)
+
+<a href='https://github.com/Willem-Jelle/Visualizations/blob/main/2024-06_orders_zonnepanelen'>
+<img src='2024-06_orders_zonnepanelen/2024-06_orders_zonnepanelen_viz.png'/></a>
+
 ## [Mei 2024: Hoofdlijnenakkoord #2](https://github.com/Willem-Jelle/Visualizations/blob/main/2024-05_sentiment_hoofdlijnenakkoord/2024-05_sentiment_hoofdlijnenakkoord_code.R)
 
 <a href='https://github.com/Willem-Jelle/Visualizations/blob/main/2024-05_sentiment_hoofdlijnenakkoord'>
