@@ -1,0 +1,1 @@
+<img src='2024-06_orders_zonnepanelen_viz.png'/></a>
