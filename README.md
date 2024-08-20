@@ -2,6 +2,11 @@
 Click on header for the code or on the visualization for the folder
 containing the data, code and visualization.
 
+## [Juli 2024: Remaking warming stripes](https://github.com/Willem-Jelle/Visualizations/blob/main/2024-07_remaking_warming_stripes/2024-07_remaking_warming_stripes_code.R)
+
+<a href='https://github.com/Willem-Jelle/Visualizations/blob/main/2024-07_remaking_warming_stripes'>
+<img src='2024-07_remaking_warming_stripes/2024-07_remaking_warming_stripes_viz.png'/></a>
+
 ## [Juni 2024: Orders zonnepanelen](https://github.com/Willem-Jelle/Visualizations/blob/main/2024-06_orders_zonnepanelen/2024-06_orders_zonnepanelen_code.R)
 
 <a href='https://github.com/Willem-Jelle/Visualizations/blob/main/2024-06_orders_zonnepanelen'>
@@ -31,3 +36,4 @@ containing the data, code and visualization.
 
 <a href='https://github.com/Willem-Jelle/Visualizations/tree/main/2024-02_measels_outbreak'>
 <img src='2024-02_measels_outbreak/2024-02_measels_outbreak_viz.png'/></a>
+
