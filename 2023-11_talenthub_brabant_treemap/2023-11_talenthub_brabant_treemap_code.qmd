@@ -96,7 +96,7 @@ vliegwiel_data |>
   theme(legend.position = "none") +
   scale_x_reverse() +
   scale_fill_manual(values = c("#3B3A6E",
-                                "#3B3A6E"))
+                               "#3B3A6E"))
 
 ggsave("2023-11_talenthub_brabant_treemap_ggsave.png",
        width = 3500,
