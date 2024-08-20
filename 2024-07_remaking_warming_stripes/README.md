@@ -1,0 +1,1 @@
+<img src='2024-07_remaking_warming_stripes_viz.png'/></a>
