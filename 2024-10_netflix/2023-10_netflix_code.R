@@ -46,7 +46,7 @@ tidy_netflix_full_year <- bind_rows(lst(raw_netflix_jan_jun_2023,
 
 # Create tibble and calculate hours in one lifetime (avarage of 4000 weeks according to Oliver Burke) -----
 
-tidy_netflx_time_spend <- tibble(total_hours_viewed_in_2023 = sum(tidy_netflix_full_year$hours_viewed),
+tidy_netflix_time_spend <- tibble(total_hours_viewed_in_2023 = sum(tidy_netflix_full_year$hours_viewed),
                                        total_hours_per_average_lifetime = (4000 * 7) * 24 )|>
   mutate(total_lifetimes_viewed = round(total_hours_viewed_in_2023 / total_hours_per_average_lifetime, 0),
          # hours_per_month_per_subscriber_2023 = round(total_hours_viewed_in_2023 / 269600000 / 12, 0),
@@ -62,7 +62,7 @@ tidy_netflx_time_spend <- tibble(total_hours_viewed_in_2023 = sum(tidy_netflix_f
 
 # Create table and export to html for easy copy-paste --------------------------
 
-tidy_netflx_time_spend |>
+tidy_netflix_time_spend |>
   gt() |>
   tab_header(title = "Exported Netflix data for infographic") |>
   gtsave("2024-10_netflix_table_html_export.html")
