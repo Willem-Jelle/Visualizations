@@ -5,7 +5,7 @@ containing the data, code and visualization.
 ## [Oktober 2024: Netflix - Wat doe jij met je tijd?](https://github.com/Willem-Jelle/Visualizations/blob/main/2024-10_netflix/2023-10_netflix_code.R)
 
 <a href='https://github.com/Willem-Jelle/Visualizations/tree/main/2024-10_netflix'>
-<img src='2024-10_netflix_infographic_png_export.png'/></a>
+<img src='2024-10_netflix/2024-10_netflix_infographic_png_export.png'/></a>
 
 ## [Juli 2024: Remaking warming stripes](https://github.com/Willem-Jelle/Visualizations/blob/main/2024-07_remaking_warming_stripes/2024-07_remaking_warming_stripes_code.R)
 
