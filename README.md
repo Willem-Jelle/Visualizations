@@ -2,6 +2,11 @@
 Click on header for the code or on the visualization for the folder
 containing the data, code and visualization.
 
+## [November 2024: Warmest year](https://github.com/Willem-Jelle/Visualizations/blob/main/2024-11_warmest_year/2024-11_warmest_year_code.R)
+
+<a href='https://github.com/Willem-Jelle/Visualizations/tree/main/2024-11_warmest_year'>
+<img src='2024-11_warmest_year/2024-11_warmest_year_viz_png_export.png'/></a>
+
 ## [Oktober 2024: Netflix - Wat doe jij met je tijd?](https://github.com/Willem-Jelle/Visualizations/blob/main/2024-10_netflix/2023-10_netflix_code.R)
 
 <a href='https://github.com/Willem-Jelle/Visualizations/tree/main/2024-10_netflix'>
