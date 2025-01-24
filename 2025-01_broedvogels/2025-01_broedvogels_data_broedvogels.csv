@@ -1,0 +1,187 @@
+Identifier;DimensionGroupId;DimensionId;Index;Title;Description
+A048109;1;Broedvogels;1;Soortgroeptrend broedvogels;Meetkundig middelen betekent dat een halvering van de populatiegrootte van een soort wordt gecompenseerd door de verdubbeling van die van een andere soort. Van een aantal soorten zijn in de eerste jaren geen indexcijfers beschikbaar. Deze ontbrekende indexcijfers zijn eerst met een kettingmethode afgeleid uit de indexcijfers van andere soorten.
+A006765;2;Broedvogels;2;Aalscholver;Wetenschappelijke naam: Phalacrocorax carbo sinensis
+A006766;2;Broedvogels;3;Appelvink;Wetenschappelijke naam: Coccothraustes coccothraustes cocothraustes
+A006767;3;Broedvogels;4;Baardman;Wetenschappelijke naam: Panurus biarmicus biarmicus
+A006769;3;Broedvogels;5;Bergeend;Wetenschappelijke naam: Tadorna tadorna
+A006770;3;Broedvogels;6;Blauwborst;Wetenschappelijke naam: Luscinia svecica svecica
+A006771;3;Broedvogels;7;Blauwe Kiekendief;Wetenschappelijke naam: Circus cyaneus
+A006772;3;Broedvogels;8;Blauwe Reiger;Wetenschappelijke naam: Ardea cinerea cinerea
+A006773;3;Broedvogels;9;Boerenzwaluw;Wetenschappelijke naam: Hirundo rustica rustica
+A006774;3;Broedvogels;10;Bontbekplevier;Wetenschappelijke naam: Charadrius hiaticula hiaticula
+A006776;3;Broedvogels;11;Bonte Vliegenvanger;Wetenschappelijke naam: Ficedula hypoleuca hypoleuca
+A006777;3;Broedvogels;12;Boomklever;Wetenschappelijke naam: Sitta europaea caesia
+A006778;3;Broedvogels;13;Boomkruiper;Wetenschappelijke naam: Certhia brachydactyla megarhyncha
+A006779;3;Broedvogels;14;Boomleeuwerik;Wetenschappelijke naam: Lullula arborea arborea
+A006780;3;Broedvogels;15;Boompieper;Wetenschappelijke naam: Anthus trivialis trivialis
+A006781;3;Broedvogels;16;Boomvalk;Wetenschappelijke naam: Falco subbuteo subbuteo
+A006782;3;Broedvogels;17;Bosrietzanger;Wetenschappelijke naam: Acrocephalus palustris
+A006783;3;Broedvogels;18;Bosuil;Wetenschappelijke naam: Strix aluco aluco
+A006784;3;Broedvogels;19;Braamsluiper;Wetenschappelijke naam: Sylvia curruca curruca
+A006785;3;Broedvogels;20;Brandgans;Wetenschappelijke naam: Branta leucopsis
+A006786;3;Broedvogels;21;Brilduiker;Wetenschappelijke naam: Bucephala clangula clangula
+A006787;3;Broedvogels;22;Bruine Kiekendief;Wetenschappelijke naam: Circus aeruginosus aeroginosus
+A048095;3;Broedvogels;23;Buidelmees;Wetenschappelijke naam: Remiz pendulinus pendulinus
+A006788;3;Broedvogels;24;Buizerd;Wetenschappelijke naam: Buteo Buteo buteo
+A052493;;Broedvogels;25;Bijeneter;Wetenschappelijke naam: Merops apiaster.
+A048096;4;Broedvogels;26;Cetti's Zanger;Wetenschappelijke naam: Cettia cetti cetti
+A006789;5;Broedvogels;27;Dodaars;Wetenschappelijke naam: Tachybaptus ruficollis ruficollis
+A006790;5;Broedvogels;28;Draaihals;Wetenschappelijke naam: Jynx torquilla torquilla
+A006792;5;Broedvogels;29;Duinpieper;Wetenschappelijke naam: Anthus campestris campestris
+A006794;5;Broedvogels;30;Dwergstern;Wetenschappelijke naam: Sternula albifrons albifrons
+A006795;6;Broedvogels;31;Eider;Wetenschappelijke naam: Somateria mollissima mollisima
+A006796;6;Broedvogels;32;Ekster;Wetenschappelijke naam: Pica pica pica
+A050225;6;Broedvogels;33;Europese Kanarie;Wetenschappelijke naam: Serinus serinus
+A006797;7;Broedvogels;34;Fazant;Wetenschappelijke naam: Phasianus colchicus
+A006798;7;Broedvogels;35;Fitis;Wetenschappelijke naam: Phylloscopus trochilus trochilus
+A006799;7;Broedvogels;36;Fluiter;Wetenschappelijke naam: Phylloscopus sibilatrix
+A006800;7;Broedvogels;37;Fuut;Wetenschappelijke naam: Podiceps cristatus cristatus
+A006801;8;Broedvogels;38;Gaai;Wetenschappelijke naam: Garrulus glandarius glandarius
+A006802;8;Broedvogels;39;Geelgors;Wetenschappelijke naam: Emberiza citrinella citrinella
+A006803;8;Broedvogels;40;Gekraagde Roodstaart;Wetenschappelijke naam: Phoenicurus phoenicurus phoenicurus
+A006804;8;Broedvogels;41;Gele Kwikstaart;Wetenschappelijke naam: Motacilla flavissima
+A006805;8;Broedvogels;42;Geoorde Fuut;Wetenschappelijke naam: Podiceps nigricollis nigricollis
+A048097;8;Broedvogels;43;Gierzwaluw;Wetenschappelijke naam: Apus apus apus
+A006806;8;Broedvogels;44;Glanskop;Wetenschappelijke naam: Parus palustris ssp. palustris
+A006807;8;Broedvogels;45;Goudhaan;Wetenschappelijke naam: Regulus regulus regulus
+A006810;8;Broedvogels;46;Grasmus;Wetenschappelijke naam: Sylvia communis communis
+A006811;8;Broedvogels;47;Graspieper;Wetenschappelijke naam: Anthus pratensis pratensis
+A050226;8;Broedvogels;48;Graszanger;Wetenschappelijke naam: Cisticola juncidis
+A006812;8;Broedvogels;49;Grauwe Gans;Wetenschappelijke naam: Anser anser anser
+A006813;8;Broedvogels;50;Grauwe Gors;Wetenschappelijke naam: Milaria calandra calandra
+A006814;8;Broedvogels;51;Grauwe Kiekendief;Wetenschappelijke naam: Circus pygargus
+A006815;8;Broedvogels;52;Grauwe Klauwier;Wetenschappelijke naam: Lanius collurio
+A006816;8;Broedvogels;53;Grauwe Vliegenvanger;Wetenschappelijke naam: Muscicapa striata striatia
+A006817;8;Broedvogels;54;Groene Specht;Wetenschappelijke naam: Picus viridis viridis
+A006818;8;Broedvogels;55;Groenling;Wetenschappelijke naam: Carduelis chloris chloris
+A006820;8;Broedvogels;56;Grote Bonte Specht;Wetenschappelijke naam: Dendrocopos major pinetorum
+A048098;8;Broedvogels;57;Grote Gele Kwikstaart;
+A006822;8;Broedvogels;58;Grote Karekiet;Wetenschappelijke naam: Acrocephalus arundinaceus arundinaceus
+A006823;8;Broedvogels;59;Grote Lijster;Wetenschappelijke naam: Turdus viscivorus viscivorus
+A006824;8;Broedvogels;60;Grote Mantelmeeuw;Wetenschappelijke naam: Larus marinus
+A006825;8;Broedvogels;61;Grote Stern;Wetenschappelijke naam: Thalasseus sandvicensis sandvicensis
+A006827;8;Broedvogels;62;Grote Zilverreiger;Wetenschappelijke naam: Ardea alba albus
+A006828;8;Broedvogels;63;Grutto;Wetenschappelijke naam: Limosa limosa limosa
+A006829;9;Broedvogels;64;Havik;Wetenschappelijke naam: Accipiter gentilis gentilis
+A006830;9;Broedvogels;65;Heggenmus;Wetenschappelijke naam: Prunella modularis modularis
+A006831;9;Broedvogels;66;Holenduif;Wetenschappelijke naam: Columba oenas oenas
+A006832;9;Broedvogels;67;Houtduif;Wetenschappelijke naam: Columba palumbus palumbus
+A050227;9;Broedvogels;68;Houtsnip;Wetenschappelijke naam: Scolopax rusticola
+A006833;9;Broedvogels;69;Huismus;Wetenschappelijke naam: Passer domesticus domesticus
+A006834;9;Broedvogels;70;Huiszwaluw;Wetenschappelijke naam: Delichon urbicum urbicum
+A006835;10;Broedvogels;71;IJsvogel;Wetenschappelijke naam: Alcedo atthis ispida
+A006837;11;Broedvogels;72;Kauw;Wetenschappelijke naam: Corvus monedula spermologus
+A006838;11;Broedvogels;73;Kemphaan;Wetenschappelijke naam: Calidris pugnax
+A006839;11;Broedvogels;74;Kerkuil;Wetenschappelijke naam: Tyto alba guttata
+A006840;11;Broedvogels;75;Kievit;Wetenschappelijke naam: Vanellus vanellus
+A006841;11;Broedvogels;76;Klapekster;Wetenschappelijke naam: Lanius excubitor excubitor
+A048099;11;Broedvogels;77;Kleine barmsijs;Wetenschappelijke naam: Carduelis flammea cabaret
+A006842;11;Broedvogels;78;Kleine Bonte Specht;Wetenschappelijke naam: Dendrocopos minor
+A006843;11;Broedvogels;79;Kleine Karekiet;Wetenschappelijke naam: Acrocephalus scirpaceus
+A006844;11;Broedvogels;80;Kleine Mantelmeeuw;Wetenschappelijke naam: Larus graellsii
+A006845;11;Broedvogels;81;Kleine Plevier;Wetenschappelijke naam: Charadrius dubius
+A006847;11;Broedvogels;82;Kleine Zilverreiger;Wetenschappelijke naam: Egretta garzetta garzetta
+A050228;11;Broedvogels;83;Kleinst Waterhoen;Wetenschappelijke naam: Porzana pusilla
+A006849;11;Broedvogels;84;Kluut;Wetenschappelijke naam: Recurvirostra avosetta
+A006850;11;Broedvogels;85;Kneu;Wetenschappelijke naam: Carduelis cannabina cannabina
+A006851;11;Broedvogels;86;Knobbelzwaan;Wetenschappelijke naam: Cygnus olor
+A006852;11;Broedvogels;87;Koekoek;Wetenschappelijke naam: Cuculus canorus canorus
+A006853;11;Broedvogels;88;Kokmeeuw;Wetenschappelijke naam: Larus ridibundus
+A006854;11;Broedvogels;89;Kolgans;Wetenschappelijke naam: Anser albifrons
+A006855;11;Broedvogels;90;Koolmees;Wetenschappelijke naam: Parus major
+A006856;11;Broedvogels;91;Korhoen;Wetenschappelijke naam: Lyrurus tetrix tetrix
+A050229;11;Broedvogels;92;Kraanvogel;Wetenschappelijke naam: Grus grus
+A006857;11;Broedvogels;93;Krakeend;Wetenschappelijke naam: Mareca strepera
+A048100;11;Broedvogels;94;Kramsvogel;Wetenschappelijke naam: Turdus pilaris
+A006859;11;Broedvogels;95;Krooneend;Wetenschappelijke naam: Netta rufina
+A006860;11;Broedvogels;96;Kruisbek;Wetenschappelijke naam: Loxia curvirostra
+A006862;11;Broedvogels;97;Kuifeend;Wetenschappelijke naam: Aythya fuligula
+A006863;11;Broedvogels;98;Kuifleeuwerik;Wetenschappelijke naam: Galerida cristata cristata
+A006864;11;Broedvogels;99;Kuifmees;Wetenschappelijke naam: Parus cristatus
+A006865;11;Broedvogels;100;Kwak;Wetenschappelijke naam: Nycticorax nycticorax nycticorax
+A006866;11;Broedvogels;101;Kwartel;Wetenschappelijke naam: Coturnix coturnix
+A006867;11;Broedvogels;102;Kwartelkoning;Wetenschappelijke naam: Crex crex
+A006868;12;Broedvogels;103;Lepelaar;Wetenschappelijke naam: Platalea leucorodia
+A006869;13;Broedvogels;104;Matkop;Wetenschappelijke naam: Parus montanus rhenanus
+A006870;13;Broedvogels;105;Meerkoet;Wetenschappelijke naam: Fulica atra
+A006871;13;Broedvogels;106;Merel;Wetenschappelijke naam: Turdus merula
+A048101;13;Broedvogels;107;Middelste Bonte Specht;Wetenschappelijke naam: Leiopicus medius medius
+A006872;13;Broedvogels;108;Middelste Zaagbek;Wetenschappelijke naam: Mergus serrator
+A006809;8;Broedvogels;109;Midden-Europese Goudvink;Wetenschappelijke naam: Pyrrhula pyrrhula europoea
+A006873;14;Broedvogels;110;Nachtegaal;Wetenschappelijke naam: Luscinia megarhynchos megarhynchos
+A006874;14;Broedvogels;111;Nachtzwaluw;Wetenschappelijke naam: Caprimulgus europaeus
+A006877;14;Broedvogels;112;Noordse Stern;Wetenschappelijke naam: Sterna paradisaea
+A050230;15;Broedvogels;113;Oehoe;Wetenschappelijke naam: Bubo bubo
+A048102;15;Broedvogels;114;Oeverloper;Wetenschappelijke naam: Actitis hypoleucos
+A006878;15;Broedvogels;115;Oeverzwaluw;Wetenschappelijke naam: Riparia riparia
+A006879;15;Broedvogels;116;Ooievaar;Wetenschappelijke naam: Ciconia ciconia
+A006880;15;Broedvogels;117;Ortolaan;Wetenschappelijke naam: Emberiza hortulana
+A006881;16;Broedvogels;118;Paapje;Wetenschappelijke naam: Saxicola rubetra
+A006882;16;Broedvogels;119;Patrijs;Wetenschappelijke naam: Perdix perdix perdix
+A006884;16;Broedvogels;120;Pimpelmees;Wetenschappelijke naam: Parus caeruleus
+A052494;;Broedvogels;121;Pontische Meeuw;Wetenschappelijke naam: Larus cachinnans.
+A006885;16;Broedvogels;122;Porseleinhoen;Wetenschappelijke naam: Porzana porzana
+A006886;16;Broedvogels;123;Purperreiger;Wetenschappelijke naam: Ardea purpurea
+A006887;16;Broedvogels;124;Putter;Wetenschappelijke naam: Carduelis carduelis
+A006888;17;Broedvogels;125;Raaf;Wetenschappelijke naam: Corvus corax corax
+A006889;17;Broedvogels;126;Ransuil;Wetenschappelijke naam: Asio otus otus
+A006890;17;Broedvogels;127;Rietgors;Wetenschappelijke naam: Emberiza schoeniclus
+A006891;17;Broedvogels;128;Rietzanger;Wetenschappelijke naam: Acrocephalus schoenobaenus
+A006892;17;Broedvogels;129;Ringmus;Wetenschappelijke naam: Passer montanus montanus
+A052495;;Broedvogels;130;Rode Wouw;Wetenschappelijke naam: Milvus milvus.
+A006893;17;Broedvogels;131;Roek;Wetenschappelijke naam: Corvus frugilegus
+A006894;17;Broedvogels;132;Roerdomp;Wetenschappelijke naam: Botaurus stellaris stellaris
+A006895;17;Broedvogels;133;Roodborst;Wetenschappelijke naam: Erithacus rubecula
+A006896;17;Broedvogels;134;Roodborsttapuit;Wetenschappelijke naam: Saxicola rubicola
+A048103;17;Broedvogels;135;Roodhalsfuut;Wetenschappelijke naam: Podiceps grisegena grisegena
+A006900;18;Broedvogels;136;Scholekster;Wetenschappelijke naam: Haematopus ostralegus
+A006901;18;Broedvogels;137;Sijs;Wetenschappelijke naam: Carduelis spinus
+A006902;18;Broedvogels;138;Slechtvalk;Wetenschappelijke naam: Falco peregrinus
+A006903;18;Broedvogels;139;Slobeend;Wetenschappelijke naam: Spatula clypeata
+A006904;18;Broedvogels;140;Smient;Wetenschappelijke naam: Mareca penelope
+A006905;18;Broedvogels;141;Snor;Wetenschappelijke naam: Locustella luscinioides luscinioides
+A006906;18;Broedvogels;142;Sperwer;Wetenschappelijke naam: Accipiter nisus
+A006907;18;Broedvogels;143;Spotvogel;Wetenschappelijke naam: Hippolais icterina
+A006908;18;Broedvogels;144;Spreeuw;Wetenschappelijke naam: Sturnus vulgaris
+A006909;18;Broedvogels;145;Sprinkhaanzanger;Wetenschappelijke naam: Locustella naevia
+A006910;18;Broedvogels;146;Staartmees;Wetenschappelijke naam: Aegithalos caudatus
+A048027;18;Broedvogels;147;Steenuil;Wetenschappelijke naam: Athene noctua vidallii
+A048104;18;Broedvogels;148;Steltkluut;Wetenschappelijke naam: Himantopus himantopus
+A006912;18;Broedvogels;149;Stormmeeuw;Wetenschappelijke naam: Larus canus
+A006913;18;Broedvogels;150;Strandplevier;Wetenschappelijke naam: Charadrius alexandrinus alexandrinus
+A006914;19;Broedvogels;151;Tafeleend;Wetenschappelijke naam: Aythya ferina
+A006916;19;Broedvogels;152;Tapuit;Wetenschappelijke naam: Oenanthe oenanthe oenanthe
+A006917;19;Broedvogels;153;Tjiftjaf;Wetenschappelijke naam: Phylloscopus collybita
+A006920;19;Broedvogels;154;Torenvalk;Wetenschappelijke naam: Falco tinnunculus tinnunculus
+A006921;19;Broedvogels;155;Tuinfluiter;Wetenschappelijke naam: Sylvia borin
+A006922;19;Broedvogels;156;Tureluur;Wetenschappelijke naam: Tringa totanus britannica
+A006923;19;Broedvogels;157;Turkse Tortel;Wetenschappelijke naam: Streptopelia decaocto
+A006924;20;Broedvogels;158;Veldleeuwerik;Wetenschappelijke naam: Alauda arvensis arvensis
+A006925;20;Broedvogels;159;Velduil;Wetenschappelijke naam: Asio flammeus flammeus
+A006926;20;Broedvogels;160;Vink;Wetenschappelijke naam: Fringilla coelebs
+A006927;20;Broedvogels;161;Visdief;Wetenschappelijke naam: Sterna hirundo hirundo
+A006928;20;Broedvogels;162;Vuurgoudhaan;Wetenschappelijke naam: Regulus ignicapillus
+A006929;21;Broedvogels;163;Waterhoen;Wetenschappelijke naam: Gallinula chloropus
+A006930;21;Broedvogels;164;Waterral;Wetenschappelijke naam: Rallus aquaticus
+A006931;21;Broedvogels;165;Watersnip;Wetenschappelijke naam: Gallinago gallinago gallinago
+A052496;;Broedvogels;166;Wespendief;Wetenschappelijke naam: Pernis apivorus.
+A006932;21;Broedvogels;167;Wielewaal;Wetenschappelijke naam: Oriolus oriolus
+A006933;21;Broedvogels;168;Wilde Eend;Wetenschappelijke naam: Anas platyrhynchos
+A006935;21;Broedvogels;169;Winterkoning;Wetenschappelijke naam: Troglodytes troglodytes
+A006936;21;Broedvogels;170;Wintertaling;Wetenschappelijke naam: Anas crecca crecca
+A006937;21;Broedvogels;171;Witte Kwikstaart;Wetenschappelijke naam: Motacilla alba
+A050231;21;Broedvogels;172;Witwangstern;Wetenschappelijke naam: Chlidonias hybridus
+A006938;21;Broedvogels;173;Woudaap;Wetenschappelijke naam: Ixobrychus minutus minutus
+A006939;21;Broedvogels;174;Wulp;Wetenschappelijke naam: Numenius arquata arquata
+A006940;22;Broedvogels;175;Zanglijster;Wetenschappelijke naam: Turdus philomelos
+A052497;;Broedvogels;176;Zeearend;Wetenschappelijke naam :Haliaeetus albicilla.
+A006941;22;Broedvogels;177;Zilvermeeuw;Wetenschappelijke naam: Larus argentatus
+A006943;22;Broedvogels;178;Zomertaling;Wetenschappelijke naam: Spatula querquedula
+A006944;22;Broedvogels;179;Zomertortel;Wetenschappelijke naam: Streptopelia turtur turtur
+A006945;22;Broedvogels;180;Zwarte Kraai;Wetenschappelijke naam: Corvus corone
+A006946;22;Broedvogels;181;Zwarte Mees;Wetenschappelijke naam: Parus ater ater
+A006947;22;Broedvogels;182;Zwarte Roodstaart;Wetenschappelijke naam: Phoenicurus ochruros
+A006949;22;Broedvogels;183;Zwarte Specht;Wetenschappelijke naam: Dryocopus martius
+A006950;22;Broedvogels;184;Zwarte Stern;Wetenschappelijke naam: Chlidonias niger niger
+A006952;22;Broedvogels;185;Zwartkop;Wetenschappelijke naam: Sylvia atricapilla
+A006953;22;Broedvogels;186;Zwartkopmeeuw;Wetenschappelijke naam: Larus melanocephalus
