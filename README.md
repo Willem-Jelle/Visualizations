@@ -2,6 +2,10 @@
 Click on header for the code or on the visualization for the folder
 containing the data, code and visualization.
 
+## [Januari 2025: 2024 warmste jaar](https://github.com/Willem-Jelle/Visualizations/blob/main/2025-01_warmest_year_in_dutch/2025-01_warmest_year_in_dutch_code.R)
+<a href='https://github.com/Willem-Jelle/Visualizations/tree/main/2025-01_warmest_year_in_dutch'>
+<img src='2025-01_warmest_year_in_dutch/2025_01_warmest_year_in_dutch_viz_png_export.png'/></a>
+
 ## [December 2024: Witte Kerst](https://github.com/Willem-Jelle/Visualizations/blob/main/2024-12_witte_kerst/2024-12_witte_kerst_code.R)
 
 <a href='https://github.com/Willem-Jelle/Visualizations/tree/main/2024-12_witte_kerst'>
