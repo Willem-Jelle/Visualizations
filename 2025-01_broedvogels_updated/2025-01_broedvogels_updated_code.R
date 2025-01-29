@@ -14,17 +14,17 @@ library(ggforce)
 
 # Import data trend broedvogels ------------------------------------------------
 
-codes_broedvogels <- read_csv2("2025-01_broedvogels_data_broedvogels.csv") |>
+codes_broedvogels <- read_csv2("2025-01_broedvogels_updated_data_broedvogels.csv") |>
   clean_names() |>
   select(identifier_broedvogels = identifier,
          naam_broedvogel = title)
 
-codes_perioden <- read_csv2("2025-01_broedvogels_data_perioden.csv") |>
+codes_perioden <- read_csv2("2025-01_broedvogels_updated_data_perioden.csv") |>
   clean_names() |>
   select(identifier_perioden = identifier,
          jaar = title)
 
-observations_broedvogels <- read_csv2("2025-01_broedvogels_data_observations.csv") |>
+observations_broedvogels <- read_csv2("2025-01_broedvogels_updated_data_observations.csv") |>
   clean_names() |>
   select(identifier_broedvogels = broedvogels,
          identifier_perioden = perioden,
@@ -182,13 +182,13 @@ for(i in 1:n_pages(gg_viz)){
                         page = i)
 
   ggsave(plot = gg_save,
-         filename = paste0("2025-01_broedvogels_viz_0",
+         filename = paste0("2025-01_broedvogels_updated_r_export_viz_0",
                            i,
                            ".png"),
          width = 7500,
          height = 7500,
          units = "px",
-         bg = "#F9F9F9",
+         bg = "#F4E7D5",
          dpi = 300)
 
 }
