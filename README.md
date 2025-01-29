@@ -5,7 +5,7 @@ containing the data, code and visualization.
 ## [December 2024: Witte Kerst](https://github.com/Willem-Jelle/Visualizations/blob/main/2024-12_witte_kerst/2024-12_witte_kerst_code.R)
 
 <a href='https://github.com/Willem-Jelle/Visualizations/tree/main/2024-12_witte_kerst'>
-<img src='2024-12_witte_kerst_viz_png_export.png'/></a>
+<img src='2024-12_witte_kerst/2024-12_witte_kerst_viz_png_export.png'/></a>
 
 ## [November 2024: Warmest year](https://github.com/Willem-Jelle/Visualizations/blob/main/2024-11_warmest_year/2024-11_warmest_year_code.R)
 
