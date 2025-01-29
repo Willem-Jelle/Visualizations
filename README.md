@@ -2,7 +2,11 @@
 Click on header for the code or on the visualization for the folder
 containing the data, code and visualization.
 
-## [Januari 2025: 2024 warmste jaar](https://github.com/Willem-Jelle/Visualizations/blob/main/2025-01_warmest_year_in_dutch/2025-01_warmest_year_in_dutch_code.R)
+## [Januari 2025: Stand broedvogels in Nederland t/m 2023](https://github.com/Willem-Jelle/Visualizations/blob/main/2025-01_broedvogels_updated/2025-01_broedvogels_updated_code.R)
+<a href='https://github.com/Willem-Jelle/Visualizations/tree/main/2025-01_broedvogels_updated'>
+<img src='2025-01_broedvogels_updated/2025-01_broedvogels_updated_viz_01.png'/></a>
+
+## [Januari 2025: 2024 definitief warmste jaar](https://github.com/Willem-Jelle/Visualizations/blob/main/2025-01_warmest_year_in_dutch/2025-01_warmest_year_in_dutch_code.R)
 <a href='https://github.com/Willem-Jelle/Visualizations/tree/main/2025-01_warmest_year_in_dutch'>
 <img src='2025-01_warmest_year_in_dutch/2025_01_warmest_year_in_dutch_viz_png_export.png'/></a>
 
